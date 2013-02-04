@@ -79,7 +79,7 @@ Menylänkar
 #wrapper,
 .container {
 	margin: 0 auto;
-	width: 100%;
+	width: 95%;
 	max-width: 1300px;
 }
 #wrapper {
@@ -111,12 +111,14 @@ Menylänkar
 	display: block;
 	float: left;
 	padding: 6px 10px 5px;
-	height: 30px;
 	border-left: 1px solid rgba(255,255,255,.2);
 	font-size: 0.875em;
 }
 .topnav a:last-child {
 	border-right: 1px solid rgba(255,255,255,.2);
+}
+.topnav a:hover {
+	background: #2D68B2;
 }
 
 /* Logga */
@@ -217,6 +219,14 @@ footer[role="contentinfo"] {
 
 	.inner {
 		padding: 20px;
+	}
+
+}
+
+@media (max-width: 1300px) {
+
+	#wrapper {
+		/*width: 95%;*/
 	}
 
 }
