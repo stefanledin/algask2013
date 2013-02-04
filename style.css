@@ -10,28 +10,213 @@ Author URI: http://www.stefanledin.se
 /* ==========================================================================
    Globals
    ========================================================================== */
+body {
+	background: url(img/background.jpg) repeat-x #fff;
+}
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*
+Menylänkar
+ */
+.menu {
+	margin: 0;
+	padding: 0;
+}
+.menu li {
+	display: inline;
+}
+.menu a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 100;
+}
 
 /* ==========================================================================
    Basic layout
    ========================================================================== */
 
+.row {
+	float: none;
+	clear: both;
+}
+
+.col {
+	margin: 0 1.063829787234%;
+	float: left;
+}
+
+.col4 {
+	width: 31.914893617021%;
+}
+
+.col8 {
+	width: 65.957446808511%;
+}
+
+.first-col {
+	margin-left: 0;
+}
+.last-col {
+	margin-right: 0;
+}
+
+.col2-border {
+	left: 67.021276595745%;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	background: #ccc;
+}
+
+.inner {
+	padding: 10px;
+}
+
+#wrapper,
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1300px;
+}
+#wrapper {
+	/*background: url(img/background_glow.png) no-repeat top center;*/
+}
+
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
 
 /* ==========================================================================
    Header
    ========================================================================== */
 
+.banner {
+	margin-bottom: 25px;
+}
+
+/* Topmenyn */
+.topnav {
+	height: 30px;
+	border-bottom: 1px solid #fff;
+	background: #2b3087;
+}
+.topnav a {
+	display: block;
+	float: left;
+	padding: 6px 10px 0;
+	height: 30px;
+	border-left: 1px solid rgba(255,255,255,.2);
+	font-size: 0.875em;
+}
+.topnav a:last-child {
+	border-right: 1px solid rgba(255,255,255,.2);
+}
+
+/* Logga */
+.logo {
+	margin: 10px 0;
+	width: 45.31914893617%;
+}
+
+/* Huvudmeny */
+.main-navigation {
+	border: 1px solid #fff;
+	background-color: #2d68b2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2d68b2), to(#2b3087));
+	background-image: -webkit-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:    -moz-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:      -o-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
+}
+.main-navigation li {
+	padding: 7px 13px;
+	display: block;
+	float: left;
+	border-right: 1px solid #fff;
+}
+.main-navigation a {
+	font-size: 1.125em;
+	font-weight: normal;
+}
+.main-navigation li:hover,
+.main-navigation .current-menu-item {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
+	background-image: -webkit-linear-gradient(top, #fff, #e5e5e5);
+	background-image:    -moz-linear-gradient(top, #fff, #e5e5e5);
+	background-image:      -o-linear-gradient(top, #fff, #e5e5e5);
+	background-image:         linear-gradient(to bottom, #fff, #e5e5e5);
+}
+.main-navigation li:hover a,
+.main-navigation .current-menu-item a {
+	color: #2b3087;
+	text-shadow: 0 1px 1px #fff;	
+}
+
 
 /* ==========================================================================
    Content
    ========================================================================== */
+.topborder {
+	position: relative;
+	height: 15px;
+	background-color: #2d68b2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2d68b2), to(#2b3087));
+	background-image: -webkit-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:    -moz-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:      -o-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
+}
+
+div[role="main"] {
+	position: relative;
+	margin: 0 0 25px 0;
+	background-color: #ffffff;
+	background: #ffffff; /* Old browsers */
+	//background: -webkit-linear-gradient(left,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 68.127659574468%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	//background: -o-linear-gradient(left,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 67.127659574468%,#ffffff 100%); /* Opera 11.10+ */
+	//background: -ms-linear-gradient(left,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 67.127659574468%,#ffffff 100%); /* IE10+ */
+	//background: linear-gradient(to right,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 67.127659574468%,#ffffff 100%); /* W3C */
+
+	/*
+	629px = 66.914893617021%
+	630px = 67.021276595745%
+	631px = 67.127659574468%
+	 */
+	
+	border-bottom: 1px solid #e5e5e5;
+}
+
+aside[role="complementary"] {
+	/*width: 31.808510638298%;*/
+	/*border-left: 1px solid #ccc;*/
+	/*background: #e5e5e5;*/
+}
 
 
 /* ==========================================================================
    Footer
    ========================================================================== */
+footer[role="contentinfo"] {
+	background: #2b3087;
+	color: #fff;
+}
 
 
 /* ==========================================================================
    Mediaqueries
    ========================================================================== */
+
+@media (min-width: 1000px) {
+
+	.inner {
+		padding: 20px;
+	}
+
+}
