@@ -14,6 +14,16 @@ body {
 	background: url(img/background.jpg) repeat-x #fff;
 }
 
+h2 {
+	margin: 0;
+	font-size: 2.2em;
+	line-height: 1.1em;
+}
+
+p {
+	margin: .8em 0 0 0;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -165,6 +175,8 @@ Menylänkar
 /* ==========================================================================
    Content
    ========================================================================== */
+
+/* Generella */
 .topborder {
 	position: relative;
 	height: 15px;
@@ -181,10 +193,6 @@ div[role="main"] {
 	margin: 0 0 25px 0;
 	background-color: #ffffff;
 	background: #ffffff; /* Old browsers */
-	//background: -webkit-linear-gradient(left,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 68.127659574468%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-	//background: -o-linear-gradient(left,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 67.127659574468%,#ffffff 100%); /* Opera 11.10+ */
-	//background: -ms-linear-gradient(left,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 67.127659574468%,#ffffff 100%); /* IE10+ */
-	//background: linear-gradient(to right,  #ffffff 0%, #ffffff 66.914893617021%, #bada55 67.021276595745%,#ffffff 67.127659574468%,#ffffff 100%); /* W3C */
 
 	/*
 	629px = 66.914893617021%
@@ -199,6 +207,27 @@ aside[role="complementary"] {
 	/*width: 31.808510638298%;*/
 	/*border-left: 1px solid #ccc;*/
 	/*background: #e5e5e5;*/
+}
+
+.infobox {
+	background: #f6f6f6;
+	border: 1px solid #ccc;
+}
+
+/* Nyhetsflöde */
+.post {
+	margin: 0 0 20px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.post-meta {
+	margin: 10px 0;
+	font-size: .8em;
+	color: #666;
+}
+.byline {
+	font-size: .8em;
+	font-weight: bold;
 }
 
 
