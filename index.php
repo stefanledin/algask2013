@@ -94,7 +94,21 @@
 
 	        		<aside class="col col4 last-col" role="complementary">
 	        			<div class="inner">
-	        				<p>Aside</p>
+	        				<?php 
+                                wp_reset_query();
+                                $args = array(
+                                    'post_type' => 'blocks'
+                                );
+                                $loop = new WP_Query($args);
+                                        
+                                while ($loop->have_posts() ) : $loop->the_post();
+                                ?>
+                                    <section class="block clearfix">
+                                        <?php the_content(); ?>
+                                    </section>
+                                <?php
+                                endwhile;
+                            ?>
 	        			</div>
 	        		</aside>
 
