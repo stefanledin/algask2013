@@ -24,6 +24,13 @@ p {
 	margin: .8em 0 0 0;
 }
 
+a, a:visited {
+	color: #2d68b2;
+}
+a:hover {
+	color: #000;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -234,6 +241,11 @@ aside[role="complementary"] {
 	border: 1px solid #ccc;
 }
 
+.breadcrumbs {
+	padding: 0 10px;
+	font-size: 0.750em;
+}
+
 /* Nyhetsflöde */
 .post {
 	margin: 0 0 20px;
@@ -262,6 +274,9 @@ aside[role="complementary"] {
 .submenu li {
 	border-bottom: 1px solid #e5e5e5;
 }
+.submenu li:first-child {
+	border-top: 1px solid #e5e5e5;
+}
 .children li:last-child {
 	border-bottom: none;
 }
@@ -276,7 +291,12 @@ aside[role="complementary"] {
 .submenu a:hover,
 .submenu .current_page_item > a {
 	color: #000;
-	background: #f2f2f2;
+	background-color: #f2f2f2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f2f2f2));
+	background-image: -webkit-linear-gradient(top, #fefefe, #f2f2f2);
+	background-image:    -moz-linear-gradient(top, #fefefe, #f2f2f2);
+	background-image:      -o-linear-gradient(top, #fefefe, #f2f2f2);
+	background-image:         linear-gradient(to bottom, #fefefe, #f2f2f2);
 }
 .children a {
 	padding-left: 15px;
@@ -317,6 +337,9 @@ footer[role="contentinfo"] {
 
 	.inner {
 		padding: 20px;
+	}
+	.breadcrumbs {
+		padding: 0 20px;
 	}
 
 }
