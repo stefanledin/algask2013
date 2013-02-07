@@ -13,12 +13,13 @@
 						<h2><?php the_title();?></h2>
                         <div class="post-meta">
                             <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
-                            <?php the_category('title_li='); ?>
+                            <?php the_category(', '); ?>
                         </div>
 						<?php the_content('Läs mer »');?>
                         <span class="byline"><?php _e('Skrivet av: '); the_author();?></span>
 					</article>
 				<?php endwhile; endif;?>
+                <a href="<?php echo get_permalink(2608);?>"><?php _e('Nyhetsarkiv');?></a>
 			</div>
 		</section>
 
