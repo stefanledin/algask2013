@@ -23,6 +23,9 @@
 		</nav>
 
 		<section class="col col6">
+			<div class="breadcrumbs">
+				<?php if(function_exists('bcn_display')) bcn_display();?>
+			</div>
 			<div class="inner">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<article id="<?php the_ID();?>" <?php post_class();?>>
