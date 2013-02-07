@@ -178,7 +178,8 @@ Menylänkar
 	font-weight: normal;
 }
 .main-navigation li:hover,
-.main-navigation .current-menu-item {
+.main-navigation .current-menu-item,
+.main-navigation .current-page-ancestor {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
 	background-image: -webkit-linear-gradient(top, #fff, #e5e5e5);
 	background-image:    -moz-linear-gradient(top, #fff, #e5e5e5);
@@ -186,7 +187,8 @@ Menylänkar
 	background-image:         linear-gradient(to bottom, #fff, #e5e5e5);
 }
 .main-navigation li:hover a,
-.main-navigation .current-menu-item a {
+.main-navigation .current-menu-item a,
+.main-navigation .current-page-ancestor a {
 	color: #2b3087;
 	text-shadow: 0 1px 1px #fff;	
 }
@@ -246,6 +248,38 @@ aside[role="complementary"] {
 .byline {
 	font-size: .8em;
 	font-weight: bold;
+}
+
+/* Undermeny */
+.submenu,
+.children {
+	margin: 0;
+	padding: 0;
+}
+.submenu {
+	margin-left: 10px;
+}
+.submenu li {
+	border-bottom: 1px solid #e5e5e5;
+}
+.children li:last-child {
+	border-bottom: none;
+}
+.submenu a,
+.submenu a:visited {
+	padding: 8px 0;
+	display: block;
+	font-size: 0.875em;
+	color: #2d68b2;
+	text-decoration: none;
+}
+.submenu a:hover,
+.submenu .current_page_item > a {
+	color: #000;
+	background: #f2f2f2;
+}
+.children a {
+	padding-left: 15px;
 }
 
 /* ==========================================================================

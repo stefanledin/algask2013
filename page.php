@@ -7,17 +7,19 @@
 	<div class="row clearfix">
 
 		<nav class="col col2 first-col">
-			<div class="inner">
-				<ul class="submenu">
-				<?php
-					wp_list_pages(array(
-						'title_li' => '',
-						'child_of' => $post->ID,
-						'depth' => 1
-					));
-				?>
-				</ul>
-			</div>
+			<ul class="submenu">
+			<?php
+				if (!empty($post->ancestors[1])) {
+					wp_list_pages('title_li=&child_of='.$post->ancestors[1]);
+				} elseif($post->post_parent !== $post->ancestors[0]) {
+					wp_list_pages('title_li=&child_of='.$post->ID);
+				} else {
+					wp_list_pages('title_li=&child_of='.$post->post_parent);
+				}
+				echo $subpage;
+
+			?>
+			</ul>
 		</nav>
 
 		<section class="col col6">
