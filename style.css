@@ -86,6 +86,14 @@ Menylänkar
 	margin-right: 0;
 }
 
+.col1-border {
+	left: 15.957446808511%;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	background: #ccc;
+}
+
 .col2-border {
 	left: 67.021276595745%;
 	width: 1px;
@@ -244,7 +252,17 @@ aside[role="complementary"] {
    Sidebar
    ========================================================================== */
 
-/* Puffar */
+/* Blocks */
+.block {
+	margin-bottom: 20px;
+}
+.block h1 {
+	font-size: 1.7em;
+}
+
+.block > .inner {
+	//padding-left: 0;
+}
 
 
 
