@@ -162,6 +162,27 @@
 	add_action('init', 'register_post_types');
 
 	/*
+	Filter - the_category
+	Tar bort kategorier som inte ska skrivas ut
+	 */
+	add_filter('the_category', function ($categorys)
+	{
+		return $categorys;
+	});
+
+	/*
+	Filter - body class
+	 */
+	add_filter('body_class', function ($classes)
+	{
+		if (is_page_template('archive.php')) {
+			$classes[] = 'archive';
+			return $classes;
+		}
+		return $classes;
+	});
+
+	/*
 	Shortcode nextgame
 	 */
 	function shortcode_nextgame($attr) {
