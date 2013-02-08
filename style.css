@@ -22,6 +22,7 @@ h2 {
 
 p {
 	margin: .8em 0 0 0;
+	line-height: 1.5em;
 }
 
 a, a:visited {
@@ -29,6 +30,14 @@ a, a:visited {
 }
 a:hover {
 	color: #000;
+}
+h1 a, h2 a, h3 a,
+h1 a:visited, h2 a:visited, h3 a:visited {
+	color: #000;
+	text-decoration: none;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+	text-decoration: underline;
 }
 
 img {
@@ -171,7 +180,8 @@ Menylänkar
 .topnav a:last-child {
 	border-right: 1px solid rgba(255,255,255,.2);
 }
-.topnav a:hover {
+.topnav a:hover,
+.topnav .current-menu-item a {
 	background: #2D68B2;
 }
 
@@ -288,6 +298,9 @@ aside[role="complementary"] {
 	padding: 0 0 10px;
 	border-bottom: 1px solid #e5e5e5;
 }
+.post h2 {
+	font-size: 2.3em;
+}
 .post-meta {
 	margin: 10px 0;
 	font-size: .8em;
@@ -345,6 +358,28 @@ aside[role="complementary"] {
 .single-post figure img {
 	margin: 0 auto;
 	display: block;
+}
+.post .infobox {
+	margin: 10px 0;
+	width: 100%;
+	font-size: 0.875em;
+}
+.post .infobox .inner {
+	padding: 7px;
+}
+
+/* Nyhetsarkiv */
+.archive h2 {
+	margin-bottom: 25px;
+}
+.archive article {
+	margin: 0 0 10px;
+}
+.archive article h3 {
+	margin: .3em 0;
+}
+.archive .post-meta {
+	margin: 0;
 }
 
 /* ==========================================================================
