@@ -30,30 +30,7 @@ Template name: Arkiv
 		</section>
 
 		<aside class="col col4 last-col" role="complementary">
-			<section class="infobox">
-				<div class="inner">
-					<header>
-						<h3>Kategorier</h3>
-					</header>
-					<ul>
-					<?php
-						wp_list_categories(array(
-							'title_li' => ''
-						));
-					?>
-					</ul>
-				</div>
-			</section>
-			<section class="infobox">
-				<div class="inner">
-					<header>
-						<h3>Arkiv</h3>
-					</header>
-					<ul>
-					<?php wp_get_archives();?>
-					</ul>
-				</div>
-			</section>
+			<?php get_sidebar('archive'); ?>
 		</aside>
 
 	</div><!-- eo row -->
