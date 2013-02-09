@@ -249,18 +249,11 @@ div[role="main"] {
 	margin: 0 0 25px 0;
 	background-color: #ffffff;
 	background: #ffffff; /* Old browsers */
-
-	/*
-	629px = 66.914893617021%
-	630px = 67.021276595745%
-	631px = 67.127659574468%
-	 */
-	
 	border-bottom: 1px solid #e5e5e5;
 }
 
 aside[role="complementary"] {
-	
+	padding-top: 10px;
 }
 
 /* Infobox */
@@ -390,13 +383,41 @@ aside[role="complementary"] {
 /* Blocks */
 .block {
 	margin-bottom: 20px;
+	width: 97.3%;
+}
+.block h1, .block h2, .block h3 {
+	margin: 0;
 }
 .block h1 {
-	font-size: 1.7em;
+	font-size: 1.500em;
 }
 
-.block > .inner {
-	//padding-left: 0;
+.block p {
+	margin: 5px 0 0 0;
+	font-size: 0.875em;
+}
+
+.block p img {
+	margin: 0;
+}
+
+.block .inner {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.blue-block {
+	background: #cddcff;
+}
+
+.blue-block h1,
+.blue-block h1 a {
+	color: #2c52a1;
+}
+
+.grey-block {
+	background: #f2f2f2;
+	border: 1px solid #ccc;
 }
 
 

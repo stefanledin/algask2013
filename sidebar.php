@@ -7,7 +7,23 @@
             
     while ($loop->have_posts() ) : $loop->the_post();
     ?>
-        <section class="block clearfix">
+        <?php
+            $bg = get_field('bakgrund');
+            switch ($bg) {
+                case 'Blå':
+                    $class = 'blue-block';
+                    break;
+                
+                case 'Grå':
+                    $class = 'grey-block';
+                    break;
+
+                default :
+                    $class = null;
+                    break;
+            }
+        ?>
+        <section class="block clearfix <?php if ($class) echo $class; ?>">
             <div class="inner">
                 <?php the_content(); ?>
             </div>
