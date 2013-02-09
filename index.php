@@ -8,7 +8,9 @@
 		<section class="col col8 first-col">
 			<div class="inner">
 				<?php get_template_part('loop','index') ?>
-                <a href="<?php echo get_permalink(2608);?>"><?php _e('Nyhetsarkiv');?></a>
+                <span class="btn">
+                	<a href="<?php echo get_permalink(2608);?>"><?php _e('Nyhetsarkiv »');?></a>
+                </span>
 			</div>
 		</section>
 
