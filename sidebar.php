@@ -22,11 +22,16 @@
                     $class = null;
                     break;
             }
+            $img = get_field('bild');
         ?>
         <section class="block clearfix <?php if ($class) echo $class; ?>">
+            <?php if (!$img) :  ?>
             <div class="inner">
+            <?php endif; ?>
                 <?php the_content(); ?>
+            <?php if (!$img) : ?>
             </div>
+            <?php endif; ?>
         </section>
     <?php
     endwhile;
