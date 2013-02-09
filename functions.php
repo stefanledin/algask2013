@@ -229,7 +229,7 @@
 				</div>
 				<div class="col col6 last-col">
 					<img src="'.get_field('klubbmarke_bortalag')['url'].'">
-					<span>'.get_field('bortalag').'></span>
+					<span>'.get_field('bortalag').'</span>
 				</div>
 			</div>
 			'; // output
