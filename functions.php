@@ -218,26 +218,24 @@
 		$loop = new WP_Query($args);
 				
 		while ($loop->have_posts() ) : $loop->the_post();
-		?>
-			<div class="infobox row clearfix">
-				<div class="inner">
-					<div class="col col12">
-						<span><?php the_field('datum');?> <?the_field('tid');?></span>
-					</div>
-					<div class="col col6 first-col">
-						<img src="<?php echo get_field('klubbmarke_hemmalag')['url'];?>">
-						<span><?php the_field('hemmalag');?></span>
-					</div>
-					<div class="col col6 last-col">
-						<img src="<?php echo get_field('klubbmarke_bortalag')['url'];?>">
-						<span><?php the_field('bortalag');?></span>
-					</div>
+			$output .= '
+			<div class="row clearfix">
+				<div class="col col12">
+					<span>'.get_field('datum') . ' ' . get_field('tid') .'</span>
+				</div>
+				<div class="col col6 first-col">
+					<img src="'.get_field('klubbmarke_hemmalag')['url'].'">
+					<span>'.get_field('hemmalag').'</span>
+				</div>
+				<div class="col col6 last-col">
+					<img src="'.get_field('klubbmarke_bortalag')['url'].'">
+					<span>'.get_field('bortalag').'></span>
 				</div>
 			</div>
-		<?
+			'; // output
 		endwhile;
 
-
+		return $output;
 	}
 	add_shortcode('nextgame', 'shortcode_nextgame');
 
