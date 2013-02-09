@@ -25,6 +25,11 @@
 				<?php endwhile; ?>
 					<span class="pull-left"><?php previous_posts_link('« Föregående sida'); ?></span>
 					<span class="pull-right"><?php next_posts_link('Nästa sida »'); ?></span>
+				<?php else : ?>
+					<h2>
+					<?php printf( __( 'Sökresultat för: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?>
+					</h2>
+					<p>Tyvärr hittades inga inlägg som matchade din sökning.</p>
 				<?php endif; ?>
 			</div>
 		</section>
