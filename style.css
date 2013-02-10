@@ -14,6 +14,10 @@ body {
 	background: url(img/background.jpg) repeat-x #fff;
 }
 
+h1 {
+	margin-top: 0;
+}
+
 h2 {
 	margin: 0;
 	font-size: 2em;
@@ -324,6 +328,25 @@ div[role="main"] {
 
 aside[role="complementary"] {
 	padding-top: 10px;
+}
+
+table {
+	width: 100%;
+}
+thead tr {
+	border-bottom: 1px solid #ccc;
+}
+tbody tr {
+	border-bottom: 1px solid #eaeaea;
+}
+tbody tr:nth-child(odd) {
+	background: #f2f2f2;
+}
+th {
+	text-align: left;
+}
+td {
+	padding: 5px 5px 5px;
 }
 
 /* Infobox */
