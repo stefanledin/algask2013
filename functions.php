@@ -134,7 +134,7 @@
 				'menu_position' => 5,
 				'supports' => array(
 					'title','thumbnail','custom-fields'
-				),
+				)
 			)
 		);
 		$labels_positioner = array(
@@ -325,7 +325,7 @@
 		while ($loop->have_posts() ) : $loop->the_post();
 
 			$output .= '<tr class="laget-spelare">';
-				$output .= '<td class="laget-spelare-namn">'.get_the_title().'</td>';
+				$output .= '<td class="laget-spelare-namn"><a href="'.get_permalink().'">'.get_field('trojnummer') . ' '.get_the_title().'</a></td>';
 			$output .= '</tr>';
 		endwhile;
 		$output .= '</table>';
