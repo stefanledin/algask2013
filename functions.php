@@ -239,15 +239,101 @@
 	}
 	add_shortcode('nextgame', 'shortcode_nextgame');
 
-	/*
-	Shortcode matcher
+	/**
+	 * Add shortcode, matchprogram
 	 */
-	function shortcode_matcher($attr) {
-		echo '<pre>';
-			print_r($attr);
-		echo '</pre>';
+	function matchprogram_func($atts)
+	{
+		global $post;
+		extract($atts);
+		$args = array(
+			'post_type' => 'matcher',
+			'meta_key' => 'datum',
+			'orderby' => 'meta_value',
+			'order' => 'ASC',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				'relation' => 'AND',
+				array(
+					'taxonomy' => 'serie',
+					'field' => 'slug',
+					'terms' => $serie
+				),
+				array(
+					'taxonomy' => 'sasong',
+					'field' => 'slug',
+					'terms' => $sasong
+				)
+			),
+		);
+		$loop = new WP_Query($args);
+		$output .= '<table class="matchprogram-'.$serie.' matchprogram">';
+			$output .= '<thead>';
+				$output .= '<tr>';
+					$output .= '<th>Datum</th>';
+					$output .= '<th>Tid</th>';
+					$output .= '<th>Hemmalag</th>';
+					$output .= '<th>Bortalag</th>';
+					$output .= '<th>Resultat</th>';
+				$output .= '</tr>';
+			$output .= '</thead>';
+			$output .= '<tbody>';
+			while ($loop->have_posts() ) : $loop->the_post();
+				$datum = get_post_meta($post->ID, 'datum', true);
+				$tid = get_post_meta($post->ID, 'tid', true);
+				$hemmalag = get_post_meta($post->ID, 'hemmalag', true);
+				$bortalag = get_post_meta($post->ID, 'bortalag', true);
+				$resultat = get_post_meta($post->ID, 'resultat', true);
+				
+				$output .= '<tr class="matchprogram-match '.$serie.'">';
+					$output .= '<td class="matchprogram-datum">'.$datum.'</td>';
+					$output .= '<td class="matchprogram-tid">'.$tid.'</td>';
+					$output .= '<td class="matchprogram-hemmalag">'.$hemmalag.'</td>';
+					$output .= '<td class="matchprogram-bortalag">'.$bortalag.'</td>';
+					$output .= '<td class="matchprogram-resultat">'.$resultat.'</td>';
+				$output .= '</tr>';	
+
+			endwhile;
+			$output .= '</tbody>';
+		$output .= '</table>';
+
+		return $output;
+		wp_reset_query();
 	}
-	add_shortcode('matcher', 'shortcode_matcher');
+	add_shortcode('matchprogram', 'matchprogram_func');
+
+	/*
+	Shortcode - laget
+	 */
+	function laget_func($atts)
+	{
+		global $post;
+		extract($atts);
+		$args = array(
+			'post_type' => 'spelare',
+			'posts_per_page' => -1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'position',
+					'field' => 'slug',
+					'terms' => $position
+				)
+			)
+		);
+		$loop = new WP_Query($args);
+		$output .= '<table class="laget">';
+		while ($loop->have_posts() ) : $loop->the_post();
+
+			$output .= '<tr class="laget-spelare">';
+				$output .= '<td class="laget-spelare-namn">'.get_the_title().'</td>';
+			$output .= '</tr>';
+		endwhile;
+		$output .= '</table>';
+
+		return $output;
+		wp_reset_query();
+	}
+	add_shortcode('laget', 'laget_func');
 	
 
 	/*
