@@ -8,6 +8,12 @@
         	</div>
         </footer>
 
+        <div id="mobile-navigation">
+            <ul>
+            <?php wp_list_pages('title_li='); ?>
+            </ul>
+        </div>
+
         <script src="<?php bloginfo('template_directory');?>/js/plugins.js"></script>
         <script src="<?php bloginfo('template_directory');?>/js/main.js"></script>
 

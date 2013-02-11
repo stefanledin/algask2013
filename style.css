@@ -114,6 +114,33 @@ Menylänkar
 	font-weight: 100;
 }
 
+/*
+Mobil meny
+ */
+#mobile-navigation {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	-webkit-transition: all .5s ease-out;
+}
+#mobile-navigation ul {
+	width: 75%;
+	height: 100%;
+	background: #fff;
+}
+#open-mobile-navigation {
+	cursor: pointer;
+}
+
+#mobile-navigation.open {
+	left: 0;
+}
+
 /* ==========================================================================
    Basic layout
    ========================================================================== */
@@ -121,11 +148,13 @@ Menylänkar
 .row {
 	float: none;
 	clear: both;
+	overflow: hidden;
 }
 
 .col {
 	margin: 0 1.063829787234%;
 	float: left;
+	overflow: hidden;
 }
 
 .col2 {
@@ -154,6 +183,7 @@ Menylänkar
 
 .col12 {
 	width: 100%;
+	margin: 0;
 }
 
 .first-col {
@@ -196,6 +226,7 @@ Menylänkar
 	margin: 0 auto;
 	width: 95%;
 	max-width: 1300px;
+	overflow: hidden;
 }
 #wrapper {
 	/*background: url(img/background_glow.png) no-repeat top center;*/
@@ -539,10 +570,101 @@ footer[role="contentinfo"] {
 
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 750px) {
 
-	#wrapper {
-		/*width: 95%;*/
+	/* Mobil meny */
+	#mobile-navigation {
+		display: block;
+	}
+
+	/* Kolumner */
+	.col,
+	.col2,
+	.col3,
+	.col4,
+	.col6,
+	.col8,
+	.col9 {
+		margin: 0;
+		float: none;
+		width: 100%;
+	}
+	.col1-border,
+	.col2-border {
+		display: none;
+	}
+
+	/* Menyer */
+	.main-navigation,
+	.topnav {
+		display: none;
+	}
+
+	/* Logga */
+	.logo {
+		width: 50%;
+	}
+
+	/* Content */
+	.single .post {
+		border-bottom: 0;
+	}
+
+	/* Sidebar */
+	aside[role="complementary"] {
+		margin-top: 10px;
+		border-top: 1px solid #ccc;
+	}
+	.block {
+		margin-bottom: 10px;
+	}
+	.block,
+	.block .col6 {
+		width: 48.5%;
+		float: left;
+		clear: left;
+	}
+	.block:nth-of-type(2n),
+	.block .col6:nth-of-type(2n) {
+		float: right;
+		clear: right;
+	}
+
+	.infobox {
+		margin: 0 auto 10px auto;
+	}
+
+}
+
+@media (max-width: 500px) {
+
+	/* Typografi */
+	p {
+		font-size: 0.875em;	
+	}
+	.post h2 {
+		font-size: 1.3em;
+	}
+
+	/* Header */
+	.banner {
+		margin-bottom: 0;
+	}
+
+	/* Logga */
+	.logo {
+		width: 75%;
+	}
+
+	/* Sidebar */
+	.block {
+		width: 100%;
+		float: none;
+		clear: none;
+	}
+	.block:nth-of-type(2n) {
+		float: none;
+		clear: none;
 	}
 
 }
