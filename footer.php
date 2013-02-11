@@ -10,7 +10,7 @@
 
         <div id="mobile-navigation">
             <ul>
-            <?php wp_list_pages('title_li='); ?>
+            <?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
             </ul>
         </div>
 
