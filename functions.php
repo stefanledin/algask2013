@@ -339,13 +339,12 @@
 	/*
 	Ta bort width och height från bilder
 	 */
-	add_filter( 'the_content', 'filter_function_name' );
-	function filter_function_name($html) {
+	add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+	add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
 
-		$greddan = preg_replace('#(<img.+?)height=(["\']?)\d*\2(.*?/?>)#i', '$1$3', $html);
-	  
-		return preg_replace('#(<img.+?)width=(["\']?)\d*\2(.*?/?>)#i', '$1$3', $greddan);
-	  
+	function remove_thumbnail_dimensions( $html ) {
+	    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+	    return $html;
 	}
 
 	/*
