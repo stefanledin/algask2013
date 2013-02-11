@@ -2,6 +2,7 @@ var App = {} || App;
 
 App.init = function () {
 	this.events.toggleSearchField();
+	this.events.openMobileNav();
 };
 
 App.events =  {
@@ -21,6 +22,14 @@ App.events =  {
 			}
 
 			el.className = classes;
+		});
+	},
+
+	openMobileNav: function () {
+		document.getElementById('open-mobile-navigation').addEventListener('click', function () {
+			var menu = document.getElementById('mobile-navigation');
+			
+			menu.classList.add('open');
 		});
 	}
 
