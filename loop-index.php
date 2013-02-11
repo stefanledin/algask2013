@@ -1,6 +1,12 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article id="<?php the_ID();?>" <?php post_class();?>>
-		<?php the_post_thumbnail(); ?>
+		<?php if (get_the_post_thumbnail()) : ?>
+			<figure>
+				<a href="<?php the_permalink();?>">
+					<?php the_post_thumbnail('medium'); ?>
+				</a>
+			</figure>
+		<?php endif; ?>
 		<h2><?php the_title();?></h2>
         <div class="post-meta">
             <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
