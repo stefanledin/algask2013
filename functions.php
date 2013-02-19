@@ -219,15 +219,15 @@
 				
 		while ($loop->have_posts() ) : $loop->the_post();
 			$output .= '
-			<div class="row clearfix">
-				<div class="col col12">
+			<div class="row-fluid">
+				<div class="span12">
 					<span>'.get_field('datum') . ' ' . get_field('tid') .'</span>
 				</div>
-				<div class="col col6 first-col">
+				<div class="span5 pull-left">
 					<img src="'.get_field('klubbmarke_hemmalag')['url'].'">
 					<span>'.get_field('hemmalag').'</span>
 				</div>
-				<div class="col col6 last-col">
+				<div class="span5 pull-right">
 					<img src="'.get_field('klubbmarke_bortalag')['url'].'">
 					<span>'.get_field('bortalag').'</span>
 				</div>

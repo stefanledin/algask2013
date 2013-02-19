@@ -1,7 +1,7 @@
         </div><!-- e.o wrapper -->
 
         <footer role="contentinfo">
-        	<div class="container">
+        	<div class="container-fluid">
         		<div class="inner">
         			<span>© Älgå Sportklubb 2013</span>
         		</div>
@@ -15,6 +15,7 @@
         </div>
 
         <script src="<?php bloginfo('template_directory');?>/js/plugins.js"></script>
+        <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
         <script src="<?php bloginfo('template_directory');?>/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

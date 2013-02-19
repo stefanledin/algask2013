@@ -30,6 +30,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/normalize.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/main.css">
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
         <script src="<?php bloginfo('template_directory');?>/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -40,12 +41,10 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="inner">
-            <span id="open-mobile-navigation" class="btn">Meny</span>
-        </div>
+        <span id="open-mobile-navigation" class="btn">Meny</span>
 
         <nav class="topnav">
-        	<div class="container">
+        	<div class="container-fluid">
 	        	<div class="pull-left">
 	        		<?php wp_nav_menu(array('theme_location' => 'topmenu', 'container' => '')); ?>
 	        	</div>
@@ -55,7 +54,7 @@
 	        </div><!-- e.o .container -->
         </nav>
 
-        <div id="wrapper">
+        <div id="wrapper" class="container-fluid">
 
         	<header class="banner">
         		<div class="logo">

@@ -3,9 +3,9 @@
 <div role="main">
 	<div class="col2-border"></div>
 	<div class="topborder"></div>
-	<div class="row clearfix">
+	<div class="row-fluid">
 
-		<section class="col col8 first-col">
+		<section class="span8">
 			<div class="inner">
 				<?php get_template_part('loop','index') ?>
                 <span class="btn">
@@ -14,10 +14,10 @@
 			</div>
 		</section>
 
-		<aside class="col col4 last-col" role="complementary">
-			<?php 
-                get_sidebar();
-            ?>
+		<aside class="span4" role="complementary">
+			<div class="">
+				<?php get_sidebar(); ?>
+			</div>
 		</aside>
 
 	</div><!-- eo row -->
