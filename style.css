@@ -23,6 +23,9 @@ h2 {
 	font-size: 2em;
 	line-height: 1.1em;
 }
+.page-title {
+	border-bottom: 1px solid #ccc;
+}
 
 p {
 	margin: .8em 0 0 0;
@@ -53,7 +56,7 @@ img {
 /*
 Knappar
  */
-.btn {
+/*.btn {
 	padding: 5px 7px;
 	background-color: #e5e5e5;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
@@ -73,7 +76,7 @@ Knappar
 	background-image:    -moz-linear-gradient(top, #fff, #ccc);
 	background-image:      -o-linear-gradient(top, #fff, #ccc);
 	background-image:         linear-gradient(to bottom, #fff, #ccc);
-}
+}*/
 .btn a,
 .btn a:visited {
 	color: #000;
@@ -183,7 +186,7 @@ Mobil meny
 }
 
 .col2-border {
-	left: 67.021276595745%;
+	left: 66.51276595745%;
 	width: 1px;
 	height: 100%;
 	position: absolute;
@@ -200,6 +203,7 @@ Mobil meny
 
 .inner {
 	padding: 10px;
+	overflow: hidden;
 }
 aside[role="complementary"] > .inner {
 	padding: 10px 10px 10px 0;

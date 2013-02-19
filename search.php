@@ -3,13 +3,12 @@
 <div role="main">
 	<div class="col2-border"></div>
 	<div class="topborder"></div>
-	<div class="row clearfix">
-
-		<section class="col col8 first-col">
-			<div class="inner">
+	<div class="row-fluid">
+		<div class="inner">
+			<section class="span8">
 				<?php if ( have_posts() ) : ?>
 					<?php global $more; ?>
-					<h2>
+					<h2 class="page-title">
 					<?php printf( __( 'Sökresultat för: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?>
 					</h2>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -31,12 +30,13 @@
 					</h2>
 					<p>Tyvärr hittades inga inlägg som matchade din sökning.</p>
 				<?php endif; ?>
-			</div>
-		</section>
+			</section>
 
-		<aside class="col col4 last-col" role="complementary">
-			<?php get_sidebar('archive'); ?>
-		</aside>
+			<aside class="span4" role="complementary">
+				<?php get_sidebar('archive'); ?>
+			</aside>
+
+		</div><!-- eo inner -->
 
 	</div><!-- eo row -->
 

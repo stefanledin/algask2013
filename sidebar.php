@@ -26,11 +26,11 @@
         ?>
         <section class="block row-fluid <?php if ($class) echo $class; ?>">
             <?php if (!$img) :  ?>
-            <!--<div class="inner">-->
+            <div class="inner">
             <?php endif; ?>
                 <?php the_content(); ?>
             <?php if (!$img) : ?>
-            <!--</div>-->
+            </div>
             <?php endif; ?>
         </section>
     <?php

@@ -8,11 +8,10 @@ Template name: Arkiv
 <div role="main">
 	<div class="col2-border"></div>
 	<div class="topborder"></div>
-	<div class="row clearfix">
-
-		<section class="col col8 first-col">
-			<div class="inner">
-				<h2>
+	<div class="row-fluid">
+		<div class="inner">
+			<section class="span8">
+				<h2 class="page-title">
 				<?php 
 				if ( is_day() ) :
 					printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
@@ -26,12 +25,13 @@ Template name: Arkiv
 				?>
 				</h2>
 				<?php get_template_part('loop','archive'); ?>
-			</div>
-		</section>
+			</section>
 
-		<aside class="col col4 last-col" role="complementary">
-			<?php get_sidebar('archive'); ?>
-		</aside>
+			<aside class="span4" role="complementary">
+				<?php get_sidebar('archive'); ?>
+			</aside>
+
+		</div>
 
 	</div><!-- eo row -->
 

@@ -2,14 +2,12 @@
 
 <div role="main">
 	<div class="topborder"></div>
-	<div class="row clearfix">
-
-		<section class="col col12">
-			<div class="inner">
+	<div class="row-fluid">
+		<div class="inner">
+			<section>
 				<?php get_template_part('loop','single'); ?>
-			</div>
-		</section>
-
+			</section>
+		</div>
 	</div><!-- eo row -->
 
 </div><!-- e.o main -->

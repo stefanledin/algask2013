@@ -1,7 +1,7 @@
 <section class="infobox">
 	<div class="inner">
 		<header>
-			<h3>Sök</h3>
+			<h3>Sök i arkivet</h3>
 		</header>
 		<?php get_search_form(); ?>
 	</div>

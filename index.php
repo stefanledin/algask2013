@@ -4,22 +4,18 @@
 	<div class="col2-border"></div>
 	<div class="topborder"></div>
 	<div class="row-fluid">
-
+		<div class="inner">
 		<section class="span8">
-			<div class="inner">
-				<?php get_template_part('loop','index') ?>
-                <span class="btn">
-                	<a href="<?php echo get_permalink(2608);?>"><?php _e('Nyhetsarkiv »');?></a>
-                </span>
-			</div>
+			<?php get_template_part('loop','index') ?>
+	        <span class="btn">
+	        	<a href="<?php echo get_permalink(2608);?>"><?php _e('Nyhetsarkiv »');?></a>
+	        </span>
 		</section>
 
 		<aside class="span4" role="complementary">
-			<div class="">
-				<?php get_sidebar(); ?>
-			</div>
+			<?php get_sidebar(); ?>
 		</aside>
-
+		</div>
 	</div><!-- eo row -->
 
 </div><!-- e.o main -->
