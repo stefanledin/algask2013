@@ -1,9 +1,9 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<article id="<?php the_ID();?>" <?php post_class();?>>
+	<article id="<?php the_ID();?>" <?php post_class('clearfix');?>>
 		<?php if (get_the_post_thumbnail()) : ?>
-			<figure>
+			<figure class="post-image thumbnail pull-left">
 				<a href="<?php the_permalink();?>">
-					<?php the_post_thumbnail('medium'); ?>
+					<?php the_post_thumbnail('thumbnail'); ?>
 				</a>
 			</figure>
 		<?php endif; ?>

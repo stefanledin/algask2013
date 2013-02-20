@@ -412,6 +412,10 @@ td {
 	font-size: .8em;
 	color: #666;
 }
+.post-image.thumbnail {
+	width: 30%;
+	margin: 0 10px 10px 0;
+}
 .byline {
 	font-size: .8em;
 	font-weight: bold;
