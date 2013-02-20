@@ -18,7 +18,7 @@
         <?php the_content('Läs mer »'); ?>
 	</article>
 	<?php endwhile; ?>
-	<span class="pull-left"><?php previous_posts_link('« Föregående sida'); ?></span>
-	<span class="pull-right"><?php next_posts_link('Nästa sida »'); ?></span>
+	<?php previous_posts_link('<span class="btn pull-left">« Föregående sida</span>'); ?>
+	<?php next_posts_link('<span class="btn pull-right">Nästa sida »</span>'); ?>
 <?php endif;?>
 <?php wp_reset_query(); ?>
