@@ -10,7 +10,7 @@ Template name: Arkiv
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-			<section class="span8">
+			<section class="span8 clearfix">
 				<h2 class="page-title">
 				<?php 
 				if ( is_day() ) :
