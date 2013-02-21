@@ -1,39 +1,30 @@
-var App = {} || App;
-
-App.init = function () {
-	this.events.toggleSearchField();
-	this.events.openMobileNav();
-};
-
-App.events =  {
+(function ($) {
 	
-	toggleSearchField: function () {
-		document.querySelector('i.icon-search').addEventListener('click', function () {
+	var App = {} || App;
 
-			var classes, el;
-			
-			el = this.parentNode;
-			classes = el.className;
-			
-			if (classes.search('closed') !== -1) {
-				classes = classes.replace('closed', 'open');
-			} else {
-				classes = classes.replace('open', 'closed');
-			}
+	App.init = function () {
+		this.events.toggleSearchField();
+		this.events.openMobileNav();
+	};
 
-			el.className = classes;
-		});
-	},
+	App.events =  {
+		
+		toggleSearchField: function () {
+			$('i.icon-search').on('click', function () {
+				$(this).parent().toggleClass('closed', 'open');
+			});
+		},
 
-	openMobileNav: function () {
-		document.getElementById('open-mobile-navigation').addEventListener('click', function () {
-			var menu = document.getElementById('mobile-navigation');
-			
-			menu.classList.add('open');
-		});
+		openMobileNav: function () {
+			document.getElementById('open-mobile-navigation').addEventListener('click', function () {
+				var menu = document.getElementById('mobile-navigation');
+				
+				menu.classList.add('open');
+			});
+		}
+
 	}
 
-}
+	App.init();
 
-App.init();
-
+}(jQuery))

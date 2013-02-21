@@ -304,10 +304,10 @@ aside[role="complementary"] > .inner {
 	position: relative;
 	padding: 1px 13px;
 	border-left: 1px solid #fff;
-	-webkit-transition: all .5s ease-out;
-	-moz-transition: all .5s ease-out;
-	-o-transition: all .5s ease-out;
-	transition: all .5s ease-out;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
 }
 .main-navigation .search.closed {
 	right: -230px;
@@ -316,9 +316,12 @@ aside[role="complementary"] > .inner {
 	right: 0;
 }
 .main-navigation form {
-	margin: 7px 0 0 13px;
+	margin: 4px 0 0 13px;
 	float: left;
 	width: 215px;
+}
+.main-navigation input {
+	margin: 0;
 }
 
 #open-mobile-navigation {
