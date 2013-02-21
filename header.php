@@ -31,6 +31,7 @@
 
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/normalize.css">
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/responsive-tables.css">
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/main.css">
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
         <script src="<?php bloginfo('template_directory');?>/js/vendor/modernizr-2.6.2.min.js"></script>
