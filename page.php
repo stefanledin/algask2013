@@ -6,7 +6,7 @@
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-			<nav class="span2">
+			<nav class="submenu-container span2">
 				<ul class="submenu">
 				<?php
 					if (!empty($post->ancestors[1])) {
