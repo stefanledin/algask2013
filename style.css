@@ -437,6 +437,15 @@ td {
 	margin: 0;
 	padding: 0;
 }
+
+.submenu li.current_page_item ul.children, .submenu li.current_page_ancestor ul.children {
+	display: block;
+}
+
+ul.children {
+	margin-left: 15px;
+	display: none;
+}
 .submenu {
 	margin-left: 10px;
 }
