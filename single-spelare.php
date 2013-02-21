@@ -15,9 +15,6 @@
 		</nav>
 
 		<section class="col col6">
-			<div class="breadcrumbs">
-				Fotboll » Herrlaget » <?php the_title(); ?>
-			</div>
 			<div class="inner">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<article id="<?php the_ID();?>" <?php post_class();?>>
