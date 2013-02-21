@@ -208,6 +208,9 @@ Mobil meny
 aside[role="complementary"] > .inner {
 	padding: 10px 10px 10px 0;
 }
+.page div[role="main"] > .row-fluid > .inner {
+	padding-left: 0;
+}
 
 #wrapper,
 .container {
@@ -416,6 +419,9 @@ td {
 	width: 30%;
 	margin: 0 10px 10px 0;
 }
+.post-image.thumbnail img {
+	margin-top: 0;
+}
 .byline {
 	font-size: .8em;
 	font-weight: bold;
@@ -565,11 +571,23 @@ footer[role="contentinfo"] {
 
 }
 
+/* ==========================================================================
+   Mediaqueries min-width 767
+   ========================================================================== */
+
 @media (max-width: 767px) {
+
+	.logo {
+		margin: 10px 0 0 0;
+		width: 75%;
+	}
 
 	/* Mobil meny */
 	#mobile-navigation {
 		display: block;
+	}
+	#open-mobile-navigation {
+		display: inline;
 	}
 
 	.col1-border,
@@ -580,13 +598,17 @@ footer[role="contentinfo"] {
 	/* Menyer */
 	.main-navigation,
 	.topnav,
-	.submenu {
-		display: none;
+	.submenu,
+	.submenu-container {
+		display: none !important;
 	}
 
 	/* Content */
 	.single .post {
 		border-bottom: 0;
+	}
+	.page div[role="main"] > .row-fluid > .inner {
+		padding-left: 10px;
 	}
 
 	/* Sidebar */
@@ -597,8 +619,7 @@ footer[role="contentinfo"] {
 	.block {
 		margin: 0 auto 10px;
 	}
-	.block,
-	.block .col6 {
+	.block {
 		margin: 0 0 10px 3%;
 		width: 45.5%;
 		float: left;
@@ -610,13 +631,51 @@ footer[role="contentinfo"] {
 		float: right;
 		clear: right;
 	}
+	.block .span5 {
+		width: 45%;
+	}
+	.block .span5.pull-left {
+		float: left;
+	}
+	.block .span5.pull-right {
+		float: right;
+	}
 	
 
 }
 
+/* ==========================================================================
+   Mediaqueries min-width 500
+   ========================================================================== */
+
 @media (max-width: 500px) {
 
-	/* Sidebar */
+	/*
+	Global
+	 */
+	body {
+		padding: 0 10px;
+		font-size: 0.750em;
+	}
+	h2,
+	.post h2 {
+		font-size: 1.500em;
+	}
+	.archive h2 {
+		margin-bottom: 10px;
+	}
+
+	/*
+	Header
+	 */
+	.banner {
+		margin-bottom: 10px;
+	}
+
+
+	/*
+	Sidebar
+	 */
 	.block {
 		margin: 0 auto 10px auto;
 		width: 95%;
