@@ -6,10 +6,13 @@
 	<div class="row-fluid">
 		<div class="inner">
 		<section class="span8">
-			<?php get_template_part('loop','index') ?>
-	        <span class="btn">
-	        	<a href="<?php echo get_permalink(2608);?>"><?php _e('Nyhetsarkiv »');?></a>
-	        </span>
+			<div id="content">
+				<?php get_template_part('loop','index') ?>
+			</div>
+	        <nav id="pagination-nav" class="clearfix">
+		        <?php #previous_posts_link('<span class="btn pull-left">« Föregående sida</span>'); ?>
+				<?php next_posts_link('<span class="btn pull-left">Fler nyheter »</span>'); ?>
+			</nav>
 		</section>
 
 		<aside class="span4" role="complementary">
