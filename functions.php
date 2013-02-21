@@ -267,7 +267,7 @@
 			),
 		);
 		$loop = new WP_Query($args);
-		$output .= '<table class="matchprogram-'.$serie.' matchprogram">';
+		$output .= '<table class="matchprogram-'.$serie.' matchprogram responsive">';
 			$output .= '<thead>';
 				$output .= '<tr>';
 					$output .= '<th>Datum</th>';
