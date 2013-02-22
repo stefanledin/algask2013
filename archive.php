@@ -24,7 +24,9 @@ Template name: Arkiv
 				endif;
 				?>
 				</h2>
-				<?php get_template_part('loop','archive'); ?>
+				<div id="content">
+					<?php get_template_part('loop','archive'); ?>
+				</div>
 			</section>
 
 			<aside class="span4" role="complementary">
