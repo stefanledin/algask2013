@@ -1,14 +1,13 @@
 (function ($) {
 	
-	var App = {} || App;
-
-	App.init = function () {
-		this.events.toggleSearchField();
-		this.events.openMobileNav();
-	};
-
-	App.events =  {
+	var App = {
 		
+		init: function () {
+			this.toggleSearchField();
+			this.openMobileNav();
+			this.closeMobileNav();
+		},
+
 		toggleSearchField: function () {
 			$('i.icon-search').on('click', function () {
 				$(this).parent().toggleClass('closed', 'open');
@@ -16,15 +15,18 @@
 		},
 
 		openMobileNav: function () {
-			document.getElementById('open-mobile-navigation').addEventListener('click', function () {
-				var menu = document.getElementById('mobile-navigation');
-				
-				menu.classList.add('open');
+			$('span#open-mobile-navigation').on('click', function () {
+				$('div#mobile-navigation').addClass('open');
+			})	
+		},
+
+		closeMobileNav: function () {
+			$('#mobile-navigation .close').on('click', function () {
+				$('div#mobile-navigation').removeClass('open');
 			});
 		}
 
-	}
-
+	};
 	App.init();
 
 }(jQuery))
