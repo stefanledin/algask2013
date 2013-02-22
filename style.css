@@ -582,6 +582,17 @@ ul.children {
 	border: 1px solid #ccc;
 }
 
+/* Gameinfo-box */
+.gameinfo-box {
+	text-align: center;
+}
+.gameinfo-box .span5 {
+	background: #fff;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
 
 
 /* ==========================================================================

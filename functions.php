@@ -223,11 +223,8 @@
 			<header>
 				<h3>'.$text.'</h3>
 			</header>
-			<div class="inner">
+			<div class="inner gameinfo-box">
 				<div class="row-fluid">
-					<div class="span12">
-						<span>'.get_field('datum') . ' ' . get_field('tid') .'</span>
-					</div>
 					<div class="span5 pull-left">
 						<img src="'.get_field('klubbmarke_hemmalag')['url'].'">
 						<span>'.get_field('hemmalag').'</span>
@@ -235,6 +232,11 @@
 					<div class="span5 pull-right">
 						<img src="'.get_field('klubbmarke_bortalag')['url'].'">
 						<span>'.get_field('bortalag').'</span>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<p>'.get_field('datum') . ' ' . get_field('tid') .'</p>
 					</div>
 				</div>
 			</div>
