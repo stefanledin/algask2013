@@ -75,7 +75,9 @@
 
         	<header class="banner">
         		<div class="logo">
-        			<img src="<?php bloginfo('template_directory');?>/img/logo.png" alt="Älgå Sportklubb" title="Älgå Sportklubb">
+                    <a href="<?php bloginfo('url');?>">
+        			    <img src="<?php bloginfo('template_directory');?>/img/logo.png" alt="Älgå Sportklubb" title="Älgå Sportklubb">
+                    </a>
         		</div>
         		<nav class="main-navigation clearfix">
         			<?php
