@@ -5,7 +5,7 @@
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-			<section class="span8">
+			<section class="span8 clearfix">
 				<?php if ( have_posts() ) : ?>
 					<?php global $more; ?>
 					<h2 class="page-title">
