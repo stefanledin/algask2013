@@ -5,7 +5,7 @@
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-			<section class="span8">
+			<section class="span8 clearfix">
 				<h2 class="page-title">
 				<?php printf( __( 'Nyhetsarkiv: %s', 'twentytwelve' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
 				</h2>

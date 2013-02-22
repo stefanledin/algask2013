@@ -5,7 +5,7 @@
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-		<section class="span8">
+		<section class="span8 clearfix">
 			<div id="content">
 				<?php get_template_part('loop','index') ?>
 			</div>

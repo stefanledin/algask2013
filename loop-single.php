@@ -5,7 +5,7 @@
 	</figure>
 	<?php endif; ?>
 	<div class="row-fluid">
-		<article id="<?php the_ID();?>" <?php post_class('span9');?>>
+		<article id="<?php the_ID();?>" <?php post_class('span9 clearfix');?>>
 			<h2><?php the_title();?></h2>
 			<div class="post-meta">
 		        <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
