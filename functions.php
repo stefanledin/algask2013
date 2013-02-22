@@ -219,6 +219,8 @@
 		$loop = new WP_Query($args);
 				
 		while ($loop->have_posts() ) : $loop->the_post();
+			$klubbmarke_hemmalag = get_field('klubbmarke_hemmalag');
+			$klubbmarke_bortalag = get_field('klubbmarke_bortalag');
 			$output .= '
 			<header>
 				<h3>'.$text.'</h3>
@@ -226,11 +228,11 @@
 			<div class="inner gameinfo-box">
 				<div class="row-fluid">
 					<div class="span5 pull-left">
-						<img src="'.get_field('klubbmarke_hemmalag')['url'].'">
+						<img src="'.$klubbmarke_hemmalag['url'].'">
 						<span>'.get_field('hemmalag').'</span>
 					</div>
 					<div class="span5 pull-right">
-						<img src="'.get_field('klubbmarke_bortalag')['url'].'">
+						<img src="'.$klubbmarke_bortalag['url'].'">
 						<span>'.get_field('bortalag').'</span>
 					</div>
 				</div>
