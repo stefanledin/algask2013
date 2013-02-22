@@ -6,7 +6,7 @@
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-			<nav class="span2">
+			<nav class="span2 submenu-container">
 				<ul class="submenu">
 				<?php
 					wp_list_pages('title_li=&child_of=5')
