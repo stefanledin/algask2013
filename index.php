@@ -10,7 +10,7 @@
 				<?php get_template_part('loop','index') ?>
 			</div>
 	        <nav id="pagination-nav" class="clearfix">
-		        <?php #previous_posts_link('<span class="btn pull-left">« Föregående sida</span>'); ?>
+		        <?php previous_posts_link('<span class="btn pull-left">« Föregående sida</span>'); ?>
 				<?php next_posts_link('<span class="btn pull-left">Fler nyheter »</span>'); ?>
 			</nav>
 		</section>
