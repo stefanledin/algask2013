@@ -182,6 +182,7 @@
 		return $classes;
 	});
 
+
 	/*
 	Shortcode nextgame
 	 */
@@ -361,3 +362,4 @@
 		return $link;
 	}
 	add_filter('the_content_more_link', 'remove_more_jump_link');
+
