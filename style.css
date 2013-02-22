@@ -100,6 +100,19 @@ Ikoner
 	background-size: 210px;
 	cursor: pointer;
 }
+.topnav-icons .icon {
+	width: 20px;
+	height: 20px;
+}
+.icon-rss {
+	background-position: 0 -38px;
+}
+.icon-twitter {
+	background-position: 0 -64px;
+}
+.icon-facebook {
+	background-position: 0 -88px;
+}
 
 /*
 Menylänkar
@@ -257,6 +270,23 @@ aside[role="complementary"] > .inner {
 .topnav a:hover,
 .topnav .current-menu-item a {
 	background: #2D68B2;
+}
+
+/* Ikoner */
+.topnav-icons {
+	margin: 0;
+}
+.topnav-icons li {
+	margin: 3px 0 0 10px;
+	display: block;
+	float: left;
+}
+.topnav-icons a {
+	padding: 0;
+	border: none;
+}
+.topnav-icons a:last-child {
+	border: none;
 }
 
 /* Logga */

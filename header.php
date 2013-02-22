@@ -50,7 +50,23 @@
 	        		<?php wp_nav_menu(array('theme_location' => 'topmenu', 'container' => '')); ?>
 	        	</div>
 	        	<div class="pull-right">
-	        		ijgdfsp
+	        		<ul class="topnav-icons">
+                        <li>
+                            <a href="<?php bloginfo('rss2_url'); ?>">
+                                <i class="icon icon-rss"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/algasportklubb" target="_blank">
+                                <i class="icon icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/pages/%C3%84lg%C3%A5-SK/172334356137430" target="_blank">
+                                <i class="icon icon-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
 	        	</div>
 	        </div><!-- e.o .container -->
         </nav>
