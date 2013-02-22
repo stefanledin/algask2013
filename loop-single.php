@@ -9,7 +9,7 @@
 			<h2><?php the_title();?></h2>
 			<div class="post-meta">
 		        <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
-		        <?php the_category(', '); ?>
+		        <?php _e('Kategori: ');?><?php the_category(', '); ?>
 		    </div>
 		    <?php 
 	    	if (!strcmp(get_field('resultat'), 'Division X: ()') ) : ?>

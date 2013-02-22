@@ -7,7 +7,7 @@
 		<h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
         <div class="post-meta">
             <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
-            <?php the_category(', '); ?>
+            <?php _e('Kategori: ');?><?php the_category(', '); ?>
         </div>
 	</article>
 	<?php endwhile; ?>
