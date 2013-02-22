@@ -1,6 +1,11 @@
 <?php global $paged; ?>
 <?php global $more; $more = null; ?>
-<?php query_posts('posts_per_page=15&paged='.$paged) ?>
+<?php 
+	if (is_day() || is_month() || is_year()) {
+		global $query_string;
+	}
+?>
+<?php query_posts('posts_per_page=15&paged='.$paged.'&'.$query_string) ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<article id="<?php the_ID();?>" <?php post_class('clearfix');?>>
 		<?php if (get_the_post_thumbnail()) : ?>
