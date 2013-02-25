@@ -326,13 +326,13 @@ aside[role="complementary"] > .inner {
 	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
 }
 .main-navigation li {
-	padding: 7px 13px;
+	padding: 8px 13px;
 	display: block;
 	float: left;
 	border-right: 1px solid #fff;
 }
 .main-navigation a {
-	font-size: 1.125em;
+	font-size: 1em;
 	font-weight: normal;
 }
 .main-navigation li:hover,
@@ -504,6 +504,7 @@ table td, table th {
 .submenu .children {
 	margin: 0;
 	padding: 0;
+	font-size: 0.875em;
 }
 
 .submenu li.current_page_item ul.children, .submenu li.current_page_ancestor ul.children {
@@ -518,7 +519,7 @@ ul.children {
 	display: block;
 }
 .submenu {
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 .submenu li {
 	border-bottom: 1px solid #e5e5e5;
@@ -531,7 +532,7 @@ ul.children {
 }
 .submenu a,
 .submenu a:visited {
-	padding: 8px 0;
+	padding: 6px 0 6px 5px;
 	display: block;
 	font-size: 0.875em;
 	color: #2d68b2;
