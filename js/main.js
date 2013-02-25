@@ -17,7 +17,7 @@
 		openMobileNav: function () {
 			$('span#open-mobile-navigation').on('click', function () {
 				$('div#mobile-navigation').addClass('open');
-			})	
+			});
 		},
 
 		closeMobileNav: function () {
@@ -29,4 +29,4 @@
 	};
 	App.init();
 
-}(jQuery))
+}(jQuery));
