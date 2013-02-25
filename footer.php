@@ -4,27 +4,20 @@
         	<div class="container-fluid">
         		<div class="inner">
                     <div class="row-fluid">
-                        <div class="span2">
-                            <h3><a href="<?php bloginfo('url');?>">Nyheter</a></h3>
-                            <?php query_posts('posts_per_page=5'); ?>
-                                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                <li><a href="<?php the_permalink();?>"><?php the_title();?></a></li>
-                                <?php endwhile; endif; ?>
-                            <?php wp_reset_query(); ?>
-                        </div>
-                        <div class="span2">
+                        
+                        <div class="span3">
                             <h3><a href="<?php echo get_permalink(5);?>">Fotboll</a></h3>
                             <?php wp_list_pages('title_li=&child_of=5'); ?>
                         </div>
-                        <div class="span2">
+                        <div class="span3">
                             <h3><a href="<?php echo get_permalink(7);?>">Skidor</a></h3>
                             <?php wp_list_pages('title_li=&child_of=7'); ?>
                         </div>
-                        <div class="span2">
+                        <div class="span3">
                             <h3><a href="<?php echo get_permalink(9);?>">Klubben</a></h3>
                             <?php wp_list_pages('title_li=&child_of=9'); ?>
                         </div>
-                        <div class="span2">
+                        <div class="span3">
                             <h3>Kontakt</h3>
                             <p>Älgå SK c/o Mikael Nilsson<br>
                             Spjutvägen 2B 671 93 Arvika</p>
