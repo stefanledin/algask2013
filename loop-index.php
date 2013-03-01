@@ -9,8 +9,8 @@
 		<?php endif; ?>
 		<h2><?php the_title();?></h2>
         <div class="post-meta">
-            <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
-            <?php _e('Kategori: ');?><?php the_category(', '); ?>
+            <div class="genericon genericon-time"></div><time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
+            <div class="genericon genericon-tag"></div><?php _e('Kategori: ');?><?php the_category(', '); ?>
         </div>
 		<?php the_content('Läs mer »');?>
         <span class="byline"><?php _e('Skrivet av: '); the_author();?></span>

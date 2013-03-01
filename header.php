@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/responsive-tables.css">
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/main.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/genericons.css">
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
         <script src="<?php bloginfo('template_directory');?>/js/vendor/modernizr-2.6.2.min.js"></script>
         <?php wp_head(); ?>
@@ -42,7 +43,10 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="open-mobile-navigation">Meny</div>
+        <div id="open-mobile-navigation">
+            <div class="genericon genericon-menu pull-left"></div>
+            <span class="pull-right">&nbsp;&nbsp;Meny</span>
+        </div>
         <nav id="mobile-navigation">
             <ul>
                 <li <?php if(is_home() || is_front_page()) echo 'class="current_page_item"'; ?>><a href="<?php bloginfo('url');?>">Förstasidan</a></li>

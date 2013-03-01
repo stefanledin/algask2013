@@ -6,8 +6,8 @@
 		<?php #the_post_thumbnail(); ?>
 		<h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
         <div class="post-meta">
-            <time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
-            <?php _e('Kategori: ');?><?php the_category(', '); ?>
+            <div class="genericon genericon-time"></div><time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
+            <div class="genericon genericon-tag"></div><?php _e('Kategori: ');?><?php the_category(', '); ?>
         </div>
 	</article>
 	<?php endwhile; ?>
