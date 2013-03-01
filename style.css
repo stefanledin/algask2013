@@ -639,6 +639,10 @@ footer[role="contentinfo"] {
 	color: #fff;
 }
 
+footer[role="contentinfo"] ul {
+	padding: 0 0 0 15px;
+}
+
 footer[role="contentinfo"] .children {
 	margin-left: 0;
 	display: block;

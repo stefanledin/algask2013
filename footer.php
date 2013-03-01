@@ -7,15 +7,21 @@
                         
                         <div class="span3">
                             <h3><a href="<?php echo get_permalink(5);?>">Fotboll</a></h3>
-                            <?php wp_list_pages('title_li=&child_of=5'); ?>
+                            <ul>
+                                <?php wp_list_pages('title_li=&child_of=5'); ?>
+                            </ul>
                         </div>
                         <div class="span3">
                             <h3><a href="<?php echo get_permalink(7);?>">Skidor</a></h3>
-                            <?php wp_list_pages('title_li=&child_of=7'); ?>
+                            <ul>
+                                <?php wp_list_pages('title_li=&child_of=7'); ?>
+                            </ul>
                         </div>
                         <div class="span3">
                             <h3><a href="<?php echo get_permalink(9);?>">Klubben</a></h3>
-                            <?php wp_list_pages('title_li=&child_of=9'); ?>
+                            <ul>
+                                <?php wp_list_pages('title_li=&child_of=9'); ?>
+                            </ul>
                         </div>
                         <div class="span3">
                             <h3>Kontakt</h3>
