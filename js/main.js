@@ -15,8 +15,8 @@
 		},
 
 		openMobileNav: function () {
-			$('span#open-mobile-navigation').on('click', function () {
-				$('div#mobile-navigation').addClass('open');
+			$('div#open-mobile-navigation').on('click', function () {
+				$('nav#mobile-navigation').slideToggle('slow');
 			});
 		},
 

@@ -136,32 +136,13 @@ Mobil meny
  */
 #mobile-navigation {
 	display: none;
-	position: fixed;
-	top: 0;
-	left: -100%;
 	z-index: 1;
 	width: 100%;
-	height: 200%;
-	background: rgba(0,0,0,.8);
-	-webkit-transition: all .2s ease-out;
-	-moz-transition: all .2s ease-out;
-	transition: all .2s ease-out;
-}
-#mobile-navigation .close {
-	position: relative;
-	width: 25%;
-	top: 0;
-	right: 0;
-	height: 150%;
-}
-#mobile-navigation.open .close {
-	position: fixed;
 }
 #mobile-navigation ul {
 	margin: 0;
 	padding: 0;
-	width: 75%;
-	height: 50%;
+	width: 100%;
 	background: #2b3087;
 	overflow: auto;
 }
@@ -196,7 +177,12 @@ Mobil meny
 	background: #2D68B2;
 }
 #open-mobile-navigation {
+	padding: 5px 10px;
+	background: #2D68B2;
 	cursor: pointer;
+	position: relative;
+	color: #fff;
+	float: right;
 }
 
 #mobile-navigation.open {
@@ -698,9 +684,9 @@ footer[role="contentinfo"] a:hover {
 	}
 
 	/* Mobil meny */
-	#mobile-navigation {
+	/*#mobile-navigation {
 		display: block;
-	}
+	}*/
 	#open-mobile-navigation {
 		display: inline;
 	}

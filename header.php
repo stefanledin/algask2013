@@ -42,7 +42,13 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <span id="open-mobile-navigation" class="btn">Meny</span>
+        <div id="open-mobile-navigation">Meny</div>
+        <nav id="mobile-navigation">
+            <ul>
+                <li <?php if(is_home() || is_front_page()) echo 'class="current_page_item"'; ?>><a href="<?php bloginfo('url');?>">Förstasidan</a></li>
+                <?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
+            </ul>
+        </nav>
 
         <nav class="topnav">
         	<div class="container-fluid">
@@ -52,17 +58,17 @@
 	        	<div class="pull-right">
 	        		<ul class="topnav-icons">
                         <li>
-                            <a href="<?php bloginfo('rss2_url'); ?>">
+                            <a href="<?php bloginfo('rss2_url'); ?>" title="RSS" target="_blank">
                                 <i class="icon icon-rss"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/algasportklubb" target="_blank">
+                            <a href="https://twitter.com/algasportklubb" title="Älgå på Twitter" target="_blank">
                                 <i class="icon icon-twitter"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="http://www.facebook.com/pages/%C3%84lg%C3%A5-SK/172334356137430" target="_blank">
+                            <a href="http://www.facebook.com/pages/%C3%84lg%C3%A5-SK/172334356137430" title="Älgå på Facebook" target="_blank">
                                 <i class="icon icon-facebook"></i>
                             </a>
                         </li>

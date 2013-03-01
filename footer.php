@@ -34,14 +34,6 @@
         	</div>
         </footer>
 
-        <div id="mobile-navigation">
-            <ul>
-                <li <?php if(is_home() || is_front_page()) echo 'class="current_page_item"'; ?>><a href="<?php bloginfo('url');?>">Förstasidan</a></li>
-                <?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
-            </ul>
-            <div class="close"></div>
-        </div>
-
         <script src="<?php bloginfo('template_directory');?>/js/plugins.js"></script>
         <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
         <script src="<?php bloginfo('template_directory');?>/js/main.js"></script>
