@@ -6,6 +6,7 @@
 			this.toggleSearchField();
 			this.openMobileNav();
 			this.closeMobileNav();
+			this.bugFixes();
 		},
 
 		toggleSearchField: function () {
@@ -24,6 +25,11 @@
 			$('#mobile-navigation .close').on('click', function () {
 				$('div#mobile-navigation').removeClass('open');
 			});
+		},
+
+		bugFixes: function () {
+			// Fix för attachment-diven som envisas med att lägga på inline style
+			$('.wp-caption').removeAttr('style');	
 		}
 
 	};
