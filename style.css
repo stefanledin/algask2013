@@ -209,11 +209,9 @@ aside[role="complementary"] > .inner {
 }
 
 #wrapper,
-.container {
-	/*margin: 0 auto;
-	width: 95%;
-	max-width: 1300px;
-	overflow: hidden;*/
+.container-fluid {
+	margin: 0 auto;
+	max-width: 1280px;
 }
 
 .pull-left {
@@ -290,14 +288,15 @@ aside[role="complementary"] > .inner {
 	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
 }
 .main-navigation li {
-	padding: 8px 13px;
 	display: block;
 	float: left;
 	border-right: 1px solid #fff;
 }
 .main-navigation a {
+	padding: 8px 13px;
 	font-size: 1em;
 	font-weight: normal;
+	display: block;
 }
 .main-navigation li:hover,
 .main-navigation .current-menu-item,
@@ -502,7 +501,7 @@ ul.children {
 .submenu a:visited {
 	padding: 6px 0 6px 5px;
 	display: block;
-	font-size: 0.875em;
+	font-size: 1em;
 	color: #2d68b2;
 	text-decoration: none;
 }
