@@ -158,6 +158,22 @@
 			'query_var' => true,
 			'rewrite' => array( 'slug' => 'position' ),
 		));
+
+		// Post type sponsorer
+		register_post_type('Sponsorer',
+			array(
+				'labels' => array(
+					'name' => __('Sponsorer'),
+					'singular_name' => __('Sponsor')
+				),
+				'public' => true,
+				'has_archive' => false,
+				'menu_position' => 5,
+				'supports' => array(
+					'title','thumbnail'
+				)
+			)
+		);
 	}
 	add_action('init', 'register_post_types');
 
@@ -356,6 +372,7 @@
 	    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
 	    return $html;
 	}
+
 
 	/*
 	Ta bort more-hoppet

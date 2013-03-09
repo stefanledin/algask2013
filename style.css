@@ -616,6 +616,20 @@ ul.children {
 /* ==========================================================================
    Footer
    ========================================================================== */
+
+/* Sponsorlimpa */
+.sponsors .row-fluid {
+	margin-bottom: 15px;
+}
+
+.sponsor {
+	padding: 10px 0;
+	background: #fff;
+	text-align: center;
+	color: #000;
+}
+
+/* Footer */
 footer[role="contentinfo"] {
 	padding-bottom: 20px;
 	background: #2b3087;
@@ -788,6 +802,10 @@ a img.aligncenter {
 		float: right;
 	}
 	
+	/* Logolimpa */
+	.sponsors {
+		display: none;
+	}
 
 }
 
