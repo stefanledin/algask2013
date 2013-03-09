@@ -32,31 +32,33 @@
                 </div>
         	</div>
             <section class="sponsors container-fluid">
-                <h3>Sponsorer</h3>
-                <?php 
-                    $args = array(
-                        'post_type' => 'Sponsorer',
-                        'posts_per_page' => -1
-                    );
-                    $loop = new WP_Query($args);
-                    $i = 1;
-                    while ($loop->have_posts() ) : $loop->the_post();
-                        
-                        if ($i == 1) {
-                            echo '<div class="row-fluid">';
-                        }
-                        ?>
-                            <div class="span2 sponsor">
-                                <?php the_title(); ?>
-                            </div>
-                        <?php
-                        if ($i == 6) {
-                            echo '</div>';
-                            $i = 0;
-                        }
-                    $i++;
-                    endwhile;
-                ?>
+                <div class="inner">
+                    <h3>Sponsorer</h3>
+                    <?php 
+                        $args = array(
+                            'post_type' => 'Sponsorer',
+                            'posts_per_page' => -1
+                        );
+                        $loop = new WP_Query($args);
+                        $i = 1;
+                        while ($loop->have_posts() ) : $loop->the_post();
+                            
+                            if ($i == 1) {
+                                echo '<div class="row-fluid">';
+                            }
+                            ?>
+                                <div class="span2 sponsor">
+                                    <?php the_title(); ?>
+                                </div>
+                            <?php
+                            if ($i == 6) {
+                                echo '</div>';
+                                $i = 0;
+                            }
+                        $i++;
+                        endwhile;
+                    ?>
+                </div>
             </section>
             <div class="row-fluid">
                 <div class="span12 center">
