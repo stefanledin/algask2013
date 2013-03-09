@@ -204,6 +204,7 @@ aside[role="complementary"] > .inner {
 	padding: 10px 10px 10px 0;
 }
 .page-template-default div[role="main"] > .row-fluid > .inner,
+.page-template-page-wide-php div[role="main"] > .row-fluid > .inner,
 .single-spelare div[role="main"] > .row-fluid > .inner {
 	padding-left: 0;
 }
@@ -375,7 +376,7 @@ aside[role="complementary"] {
 
 table {
 	width: 100%;
-	font-size: 0.750em;
+	font-size: 0.875em;
 }
 thead tr {
 	border-bottom: 1px solid #ccc;
