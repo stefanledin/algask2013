@@ -70,11 +70,13 @@ Ikoner
 	background: url(img/sprite.png) no-repeat;
 	display: block;
 }
-.icon-search {
-	margin: 8px 0;
+.genericon-search {
+	margin: 2px 0;
 	float: left;
-	width: 20px;
-	height: 20px;
+	width: 32px;
+	height: 32px;
+	font-size: 32px;
+	color: #fff;
 	background-position: 0 0;
 	background-size: 210px;
 	cursor: pointer;

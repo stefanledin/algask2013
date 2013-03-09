@@ -98,7 +98,7 @@
     					));
 					?> 
         			<div class="search closed pull-right">
-        				<i class="icon icon-search"></i>
+                        <div class="genericon genericon-search"></div>
                         <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
                             <label class="visuallyhidden screen-reader-text" for="s">Sök efter:</label>
                             <input type="text" placeholder="Sök" value="" name="s" id="s" />

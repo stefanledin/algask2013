@@ -10,7 +10,7 @@
 		},
 
 		toggleSearchField: function () {
-			$('i.icon-search').on('click', function () {
+			$('.genericon-search').on('click', function () {
 				$(this).parent().toggleClass('closed', 'open');
 			});
 		},
