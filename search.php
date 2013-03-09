@@ -22,8 +22,8 @@
 				        <span class="byline"><?php _e('Skrivet av: '); the_author();?></span>
 					</article>
 				<?php endwhile; ?>
-					<span class="pull-left"><?php previous_posts_link('« Föregående sida'); ?></span>
-					<span class="pull-right"><?php next_posts_link('Nästa sida »'); ?></span>
+					<?php previous_posts_link('<span class="btn pull-left">« Föregående sida</span>'); ?>
+					<?php next_posts_link('<span class="btn pull-left">Fler nyheter »</span>'); ?>
 				<?php else : ?>
 					<h2>
 					<?php printf( __( 'Sökresultat för: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?>
