@@ -1,34 +1,46 @@
 <?php 
     wp_reset_query();
-    if (is_home() || is_front_page()) {        
-        $visas_pa_startsidan_value = '1';
-    } else {
-        $visas_pa_startsidan_value = '0';
-    }
-    $args = array(
-        'post_type' => 'blocks',
-        'meta_query' => array(
-            'relation' => 'OR',
-            array(
-                'key' => 'alla_sidor',
-                'value' => '1',
-                'compare' => '=='
-            ),
-            array(
-                'key' => 'visas_pa_dessa_sidor',
-                'value' => $post->ID,
-                'compare' => 'LIKE'
-            ),
-            array(
-                'key' => 'visas_pa_startsidan',
-                'value' => $visas_pa_startsidan_value,
-                'compare' => '=='
-            )
-        )
-    );
-    $loop = new WP_Query($args);
     
-    while ($loop->have_posts() ) : $loop->the_post();
+    // Om det finns valda block för den här sidan
+    $pageSpecificBlocks = get_field('valj_blocks');
+    if ($pageSpecificBlocks) {
+    
+        foreach ($pageSpecificBlocks as $post) {
+            setup_postdata($post);
+            printBlock($post);
+        }
+    
+    } else {
+        
+        if (is_home() || is_front_page()) {        
+            $visas_pa_startsidan_value = '1';
+        } else {
+            $visas_pa_startsidan_value = '2';
+        }
+        $args = array(
+            'post_type' => 'blocks',
+            'meta_query' => array(
+                'relation' => 'OR',
+                array(
+                    'key' => 'alla_sidor',
+                    'value' => '1',
+                    'compare' => '=='
+                ),
+                array(
+                    'key' => 'visas_pa_startsidan',
+                    'value' => $visas_pa_startsidan_value,
+                    'compare' => '=='
+                )
+            )
+        );
+        // Skapa en loop
+        $loop = new WP_Query($args);
+        while ($loop->have_posts() ) : $loop->the_post();
+            printBlock($post);
+        endwhile;
+    } //endif
+
+    function printBlock($post) {
         $bg = get_field('bakgrund');
         switch ($bg) {
             case 'Blå':
@@ -53,7 +65,7 @@
             <?php if ($img) : ?>
             </div>
             <?php endif; ?>
-        </section>
-    <?php
-    endwhile;
-?>  
+        </section><?php        
+    }
+
+    wp_reset_query();?>
