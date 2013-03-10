@@ -3,7 +3,14 @@
 	/*
 	Scripts
 	 */
-	wp_enqueue_script('jquery');
+	function load_scripts()
+	{
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('plugins', get_template_directory_uri().'/js/plugins.js', null, null, true);
+		wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', null, null, true);
+		wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', null, null, true);
+	}
+	add_action('wp_enqueue_scripts', 'load_scripts');
 
 	/*
 	Thumbnails plz
@@ -233,7 +240,7 @@
 			),
 		);
 		$loop = new WP_Query($args);
-				
+		$output = null;
 		while ($loop->have_posts() ) : $loop->the_post();
 			$klubbmarke_hemmalag = get_field('klubbmarke_hemmalag');
 			$klubbmarke_bortalag = get_field('klubbmarke_bortalag');
@@ -360,6 +367,33 @@
 		wp_reset_query();
 	}
 	add_shortcode('laget', 'laget_func');
+	
+	function nyheter_func($atts)
+	{
+		global $post;
+		extract($atts);
+
+		$loop = new WP_Query(array(
+	        'post_type' => 'post',
+	        'category_name' => $kategori,
+	        'posts_per_page' => 5
+	    ));
+	    $output = '
+	    <header>
+            <h3>Relaterade nyheter</h3>
+        </header>
+        <div class="inner">
+            <ul>';
+            while ($loop->have_posts() ) : $loop->the_post();
+                $output .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+            endwhile;
+            $output .= '</ul>
+        </div>';
+
+        wp_reset_query();
+		return $output;
+	}
+	add_shortcode('nyheter', 'nyheter_func');
 	
 
 	/*

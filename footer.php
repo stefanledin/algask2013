@@ -67,10 +67,6 @@
             </div>
         </footer>
 
-        <script src="<?php bloginfo('template_directory');?>/js/plugins.js"></script>
-        <script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
-        <script src="<?php bloginfo('template_directory');?>/js/main.js"></script>
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
