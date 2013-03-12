@@ -425,7 +425,8 @@ table td, table th {
 	font-weight: normal;
 	color: #fff;
 }
-.infobox ul {
+.infobox ul,
+aside[role="complementary"] ul {
 	margin: 0;
 	padding: 0 0 0 20px;
 }
@@ -581,6 +582,9 @@ ul.children {
 
 .block p img {
 	margin: 0;
+}
+.block p img.aligncenter {
+	margin: 0 auto;
 }
 
 .block .inner {
