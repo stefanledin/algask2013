@@ -15,7 +15,8 @@
 		<ul class="category-list">
 		<?php
 			wp_list_categories(array(
-				'title_li' => ''
+				'title_li' => '',
+				'exclude' => '1,7,25,26,27,28,29'
 			));
 		?>
 		</ul>
