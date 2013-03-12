@@ -15,29 +15,27 @@
 			</nav>
 
 			<section class="span6">
-				<div class="inner">
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<article id="<?php the_ID();?>" <?php post_class();?>>
-							<h1><?php the_title();?></h1>
-							<figure>
-								<?php the_post_thumbnail('thumbnail'); ?>
-							</figure>
-							<?php $playerInfo = get_field('information');?>
-							<?php if ($playerInfo) : ?>
-							<table class="responsive">
-								<tbody>
-									<?php
-										foreach ($playerInfo as $info) {
-											$output .= '<tr><td>'.$info['fraga'].':</td><td>'.$info['svar'].'</td></tr>';
-										}
-										echo $output;
-									?>
-								</tbody>
-							</table>
-							<?php endif; ?>
-						</article>
-					<?php endwhile; endif;?>
-				</div>
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<article id="<?php the_ID();?>" <?php post_class();?>>
+						<h1><?php the_title();?></h1>
+						<figure>
+							<?php the_post_thumbnail('thumbnail'); ?>
+						</figure>
+						<?php $playerInfo = get_field('information');?>
+						<?php if ($playerInfo) : ?>
+						<table class="responsive">
+							<tbody>
+								<?php
+									foreach ($playerInfo as $info) {
+										$output .= '<tr><td>'.$info['fraga'].':</td><td>'.$info['svar'].'</td></tr>';
+									}
+									echo $output;
+								?>
+							</tbody>
+						</table>
+						<?php endif; ?>
+					</article>
+				<?php endwhile; endif;?>
 			</section>
 
 			<aside class="span4" role="complementary">
