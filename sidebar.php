@@ -10,35 +10,34 @@
             printBlock($post);
         }
     
-    } else {
+    } 
         
-        if (is_home() || is_front_page()) {        
-            $visas_pa_startsidan_value = '1';
-        } else {
-            $visas_pa_startsidan_value = '2';
-        }
-        $args = array(
-            'post_type' => 'blocks',
-            'meta_query' => array(
-                'relation' => 'OR',
-                array(
-                    'key' => 'alla_sidor',
-                    'value' => '1',
-                    'compare' => '=='
-                ),
-                array(
-                    'key' => 'visas_pa_startsidan',
-                    'value' => $visas_pa_startsidan_value,
-                    'compare' => '=='
-                )
+    if (is_home() || is_front_page()) {        
+        $visas_pa_startsidan_value = '1';
+    } else {
+        $visas_pa_startsidan_value = '2';
+    }
+    $args = array(
+        'post_type' => 'blocks',
+        'meta_query' => array(
+            'relation' => 'OR',
+            array(
+                'key' => 'alla_sidor',
+                'value' => '1',
+                'compare' => '=='
+            ),
+            array(
+                'key' => 'visas_pa_startsidan',
+                'value' => $visas_pa_startsidan_value,
+                'compare' => '=='
             )
-        );
-        // Skapa en loop
-        $loop = new WP_Query($args);
-        while ($loop->have_posts() ) : $loop->the_post();
-            printBlock($post);
-        endwhile;
-    } //endif
+        )
+    );
+    // Skapa en loop
+    $loop = new WP_Query($args);
+    while ($loop->have_posts() ) : $loop->the_post();
+        printBlock($post);
+    endwhile;
 
     function printBlock($post) {
         $bg = get_field('bakgrund');
