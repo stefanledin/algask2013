@@ -27,6 +27,15 @@
         <meta name="description" content="<?php bloginfo('description')?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <meta property="og:title" content="&#xc4;lg&#xe5; Sportklubb" />
+        <meta property="og:type" content="sport" />
+        <meta property="og:url" content="http://www.algask.se" />
+        <?php if (!get_the_post_thumbnail()) : ?>
+            <meta property="og:image" content="http://www.algask.se/wp-content/uploads/2013/01/alga.png" />    
+        <?php endif; ?>
+        
+        <meta property="og:site_name" content="&#xc4;lg&#xe5; Sportklubb" />
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/normalize.css">
