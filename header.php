@@ -24,7 +24,8 @@
 	        echo " | $site_description";
 
 	    ?></title>
-        <meta name="description" content="<?php bloginfo('description')?>">
+
+        <meta name="description" content="Den officiella hemsidan för Älgå Sportklubb.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta property="og:title" content="&#xc4;lg&#xe5; Sportklubb" />
@@ -37,6 +38,8 @@
         <meta property="og:site_name" content="&#xc4;lg&#xe5; Sportklubb" />
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/img/touch-icon.png" />
+        <link rel="icon" type="image/ico" href="<?php bloginfo('template_directory');?>/img/favicon.ico">
 
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/normalize.css">
         <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
