@@ -305,6 +305,7 @@
 				$output .= '<tr>';
 					$output .= '<th>Datum</th>';
 					$output .= '<th>Tid</th>';
+					$output .= '<th>Plats</th>';
 					$output .= '<th>Hemmalag</th>';
 					$output .= '<th>Bortalag</th>';
 					$output .= '<th>Resultat</th>';
@@ -314,6 +315,7 @@
 			while ($loop->have_posts() ) : $loop->the_post();
 				$datum = get_post_meta($post->ID, 'datum', true);
 				$tid = get_post_meta($post->ID, 'tid', true);
+				$spelplats = get_post_meta($post->ID, 'spelplats', true);
 				$hemmalag = get_post_meta($post->ID, 'hemmalag', true);
 				$bortalag = get_post_meta($post->ID, 'bortalag', true);
 				$resultat = get_post_meta($post->ID, 'resultat', true);
@@ -321,6 +323,7 @@
 				$output .= '<tr class="matchprogram-match '.$serie.'">';
 					$output .= '<td class="matchprogram-datum">'.$datum.'</td>';
 					$output .= '<td class="matchprogram-tid">'.$tid.'</td>';
+					$output .= '<td class="matchprogram-spelplats">'.$spelplats.'</td>';
 					$output .= '<td class="matchprogram-hemmalag">'.$hemmalag.'</td>';
 					$output .= '<td class="matchprogram-bortalag">'.$bortalag.'</td>';
 					$output .= '<td class="matchprogram-resultat">'.$resultat.'</td>';
