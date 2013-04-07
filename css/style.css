@@ -1,0 +1,853 @@
+/* ==========================================================================
+   Globals
+   ========================================================================== */
+body {
+	background: url(../img/background.jpg) repeat-x #fff;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+h2 {
+	margin: 0;
+	font-size: 2em;
+	line-height: 1.1em;
+}
+.page-title {
+	border-bottom: 1px solid #ccc;
+}
+
+p {
+	margin: .8em 0 0 0;
+	line-height: 1.5em;
+}
+
+a, a:visited {
+	color: #2d68b2;
+}
+a:hover {
+	color: #000;
+}
+h1 a, h2 a, h3 a,
+h1 a:visited, h2 a:visited, h3 a:visited {
+	color: #000;
+	text-decoration: none;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+	text-decoration: underline;
+}
+
+img {
+	margin: 10px 0;
+	max-width: 100%;
+	height: auto;
+}
+
+/*
+Knappar
+ */
+.btn a,
+.btn a:visited {
+	color: #000;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #fff;
+}
+
+/*
+Ikoner
+ */
+.icon {
+	background: url(../img/sprite.png) no-repeat;
+	display: block;
+}
+.genericon-search {
+	margin: 2px 0;
+	float: left;
+	width: 32px;
+	height: 32px;
+	font-size: 32px;
+	color: #fff;
+	background-position: 0 0;
+	background-size: 210px;
+	cursor: pointer;
+}
+.topnav-icons .icon {
+	width: 20px;
+	height: 20px;
+}
+.icon-rss {
+	background-position: 0 -38px;
+}
+.icon-twitter {
+	background-position: 0 -64px;
+}
+.icon-facebook {
+	background-position: 0 -88px;
+}
+
+/*
+Menylänkar
+ */
+.menu {
+	margin: 0;
+	padding: 0;
+}
+.menu li {
+	display: inline;
+}
+.menu a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 100;
+	display: block;
+}
+
+/*
+Mobil meny
+ */
+#mobile-navigation {
+	display: none;
+	z-index: 1;
+	width: 100%;
+}
+#mobile-navigation ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background: #2b3087;
+	overflow: auto;
+}
+#mobile-navigation .children {
+	padding: 0;
+	width: 100%;
+	display: block;
+}
+#mobile-navigation li {
+	list-style: none;
+}
+#mobile-navigation a,
+#mobile-navigation a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+#mobile-navigation a {
+	padding: 10px 0 10px 15px;
+	display: block;
+	border-bottom: 1px solid rgba(255,255,255,.3);
+}
+#mobile-navigation a:hover {
+	background: #2b3087;
+}
+#mobile-navigation .children a {
+	padding-left: 30px;
+}
+#mobile-navigation .children .children a {
+	padding-left: 60px;
+}
+#mobile-navigation .current_page_item > a {
+	background: #2D68B2;
+}
+#open-mobile-navigation {
+	padding: 5px 10px;
+	background: #2D68B2;
+	cursor: pointer;
+	position: relative;
+	color: #fff;
+	float: right;
+}
+
+#mobile-navigation.open {
+	left: 0;
+}
+
+/* ==========================================================================
+   Basic layout
+   ========================================================================== */
+
+.col1-border {
+	left: 14.939024390244%;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	background: #ccc;
+}
+
+.col2-border {
+	left: 66.158536585366%;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	background: #ccc;
+}
+
+.col2-narrow-border {
+	left: 75.531914893617%;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	background: #ccc;
+}
+
+.inner {
+	padding: 10px;
+	overflow: hidden;
+}
+aside[role="complementary"] > .inner {
+	padding: 10px 10px 10px 0;
+}
+.page-template-default div[role="main"] > .row-fluid > .inner,
+.page-template-page-wide-php div[role="main"] > .row-fluid > .inner,
+.single-spelare div[role="main"] > .row-fluid > .inner {
+	padding-left: 0;
+}
+
+#wrapper,
+.container-fluid {
+	margin: 0 auto;
+	max-width: 1280px;
+}
+
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.center {
+	text-align: center;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.banner {
+	margin-bottom: 25px;
+}
+
+/* Topmenyn */
+.topnav {
+	height: 30px;
+	border-bottom: 1px solid #fff;
+	background: #2b3087;
+}
+.topnav a {
+	display: block;
+	float: left;
+	padding: 6px 10px 5px;
+	border-left: 1px solid rgba(255,255,255,.2);
+	font-size: 0.875em;
+}
+.topnav a:last-child {
+	border-right: 1px solid rgba(255,255,255,.2);
+}
+.topnav a:hover,
+.topnav .current-menu-item a {
+	background: #2D68B2;
+}
+
+/* Ikoner */
+.topnav-icons {
+	margin: 0;
+}
+.topnav-icons li {
+	margin: 3px 0 0 10px;
+	display: block;
+	float: left;
+}
+.topnav-icons a {
+	padding: 0;
+	border: none;
+}
+.topnav-icons a:last-child {
+	border: none;
+}
+
+/* Logga */
+.logo {
+	margin: 10px 0;
+	width: 45.31914893617%;
+}
+
+/* Huvudmeny */
+.main-navigation {
+	overflow: hidden;
+	border: 1px solid #fff;
+	background-color: #2d68b2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2d68b2), to(#2b3087));
+	background-image: -webkit-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:    -moz-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:      -o-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
+}
+.main-navigation li {
+	display: block;
+	float: left;
+	border-right: 1px solid #fff;
+}
+.main-navigation a {
+	padding: 8px 13px;
+	font-size: 1em;
+	font-weight: normal;
+	display: block;
+}
+.main-navigation li:hover,
+.main-navigation .current-menu-item,
+.main-navigation .current-page-ancestor,
+.single-spelare .main-navigation #menu-item-14 {
+	background-color: #e5e5e5;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
+	background-image: -webkit-linear-gradient(top, #fff, #e5e5e5);
+	background-image:    -moz-linear-gradient(top, #fff, #e5e5e5);
+	background-image:      -o-linear-gradient(top, #fff, #e5e5e5);
+	background-image:         linear-gradient(to bottom, #fff, #e5e5e5);
+}
+.main-navigation li:hover a,
+.main-navigation .current-menu-item a,
+.main-navigation .current-page-ancestor a,
+.single-spelare .main-navigation #menu-item-14 a {
+	color: #2b3087;
+	text-shadow: 0 1px 1px #fff;	
+}
+
+.main-navigation .search {
+	position: relative;
+	padding: 1px 13px;
+	border-left: 1px solid #fff;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+.main-navigation .search.closed {
+	right: -230px;
+}
+.main-navigation .search.open {
+	right: 0;
+}
+.main-navigation form {
+	margin: 4px 0 0 13px;
+	float: left;
+	width: 215px;
+}
+.main-navigation input {
+	margin: 0;
+}
+
+#open-mobile-navigation {
+	display: none;
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+/* Generella */
+.topborder {
+	position: relative;
+	height: 15px;
+	background-color: #2d68b2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2d68b2), to(#2b3087));
+	background-image: -webkit-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:    -moz-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:      -o-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
+}
+
+div[role="main"] {
+	position: relative;
+	margin: 0 0 25px 0;
+	background-color: #ffffff;
+	background: #ffffff; /* Old browsers */
+	border-bottom: 1px solid #e5e5e5;
+}
+
+aside[role="complementary"] {
+	padding-top: 10px;
+}
+
+table {
+	width: 100%;
+	font-size: 0.875em;
+}
+thead tr {
+	border-bottom: 1px solid #ccc;
+}
+tbody tr {
+	border-bottom: 1px solid #eaeaea;
+}
+tbody tr:nth-child(odd) {
+	background: #f2f2f2;
+}
+th {
+	text-align: left;
+}
+table td, table th {
+	padding: 5px 1% 5px;
+}
+
+.wp-caption-text {
+	font-size: 0.750em;
+}
+
+/* Infobox */
+.infobox {
+	margin: 0 0 20px 0;
+	width: 97.3%;
+	background: #fcfcfc;
+	border: 1px solid #ccc;
+}
+.infobox header,
+.block header {
+	background-color: #2d68b2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2d68b2), to(#2b3087));
+	background-image: -webkit-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:    -moz-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:      -o-linear-gradient(top, #2d68b2, #2b3087);
+	background-image:         linear-gradient(to bottom, #2d68b2, #2b3087);
+}
+.infobox h3,
+.block h3 {
+	margin-top: 0;
+	padding: 5px 10px;
+	border-bottom: 1px solid #ccc;
+	font-size: 1em;
+	font-weight: normal;
+	color: #fff;
+}
+.infobox ul,
+aside[role="complementary"] ul {
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+.infobox li {
+	line-height: 27px;
+}
+.infobox .inner {
+	padding-top: 7px;
+}
+
+.breadcrumbs {
+	margin: 10px 0 0 0;
+	padding: 0 10px;
+	font-size: 0.750em;
+}
+
+/* Nyhetsflöde */
+.post {
+	margin: 0 0 20px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.post h2 {
+	font-size: 2.3em;
+}
+.post-meta {
+	margin: 10px 0;
+	font-size: .8em;
+	color: #666;
+}
+.post-image.thumbnail {
+	width: 30%;
+	margin: 0 10px 10px 0;
+}
+.post-image.thumbnail img {
+	margin-top: 0;
+}
+.byline {
+	font-size: .8em;
+	font-weight: bold;
+	color: #666;
+}
+
+/* Undermeny */
+.submenu,
+.submenu .children {
+	margin: 0;
+	padding: 0;
+	font-size: 0.875em;
+}
+
+.submenu li.current_page_item ul.children, .submenu li.current_page_ancestor ul.children {
+	display: block;
+}
+
+ul.children {
+	margin-left: 15px;
+	display: none;
+}
+.single-spelare .page-item-16 ul.children {
+	display: block;
+}
+.submenu {
+	/*margin-left: 10px;*/
+}
+.submenu li {
+	border-bottom: 1px solid #e5e5e5;
+}
+.submenu li:first-child {
+	border-top: 1px solid #e5e5e5;
+}
+.submenu .children li:last-child {
+	border-bottom: none;
+}
+.submenu a,
+.submenu a:visited {
+	padding: 6px 0 6px 5px;
+	display: block;
+	font-size: 1em;
+	color: #2d68b2;
+	text-decoration: none;
+}
+.submenu a:hover,
+.submenu .current_page_item > a,
+.single-spelare .submenu .page-item-16 > a {
+	color: #000;
+	background-color: #f2f2f2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f2f2f2));
+	background-image: -webkit-linear-gradient(top, #fefefe, #f2f2f2);
+	background-image:    -moz-linear-gradient(top, #fefefe, #f2f2f2);
+	background-image:      -o-linear-gradient(top, #fefefe, #f2f2f2);
+	background-image:         linear-gradient(to bottom, #fefefe, #f2f2f2);
+}
+.submenu .children a {
+	padding-left: 15px;
+}
+
+/* Single */
+.single-post figure {
+	margin: 0 0 30px 0;
+}
+.single-post figure img {
+	margin: 0 auto;
+	display: block;
+}
+.post .infobox {
+	margin: 10px 0;
+	width: 100%;
+	font-size: 0.875em;
+}
+.post .infobox .inner {
+	padding: 7px;
+}
+
+/* Nyhetsarkiv */
+.archive h2 {
+	margin-bottom: 25px;
+}
+.archive article {
+	margin: 0 0 10px;
+}
+.archive article h3 {
+	margin: .3em 0;
+}
+.archive .post-meta {
+	margin: 0;
+}
+
+.category-list .children {
+	display: block;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+/* Blocks */
+.block {
+	margin-bottom: 20px;
+	position: relative;
+}
+.block h1, .block h2, .block h3 {
+	margin: 0;
+}
+.block h1 {
+	font-size: 1.500em;
+}
+
+.block p {
+	margin: 5px 0 0 0;
+	font-size: 0.875em;
+}
+
+.block p img {
+	margin: 0;
+}
+.block p img.aligncenter {
+	margin: 0 auto;
+}
+
+.block .inner {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.blue-block {
+	background: #cddcff;
+}
+
+.blue-block h1,
+.blue-block h1 a {
+	color: #2c52a1;
+}
+
+.grey-block {
+	background: #fcfcfc;
+	border: 1px solid #ccc;
+}
+
+/* Gameinfo-box */
+.gameinfo-box {
+	text-align: center;
+}
+.gameinfo-box .span5 {
+	background: #fff;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* Sponsorlimpa */
+.sponsors .row-fluid {
+	margin-bottom: 15px;
+}
+
+.sponsor {
+	padding: 10px 0;
+	background: #fff;
+	text-align: center;
+	color: #000;
+}
+
+/* Footer */
+footer[role="contentinfo"] {
+	padding-bottom: 20px;
+	background: #2b3087;
+	color: #fff;
+}
+
+footer[role="contentinfo"] ul {
+	padding: 0 0 0 15px;
+}
+
+footer[role="contentinfo"] .children {
+	margin: 0;
+	display: block;
+}
+
+footer[role="contentinfo"] a,
+footer[role="contentinfo"] a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+footer[role="contentinfo"] a:hover {
+	text-decoration: underline;
+}
+
+/* ==========================================================================
+   WP-stilar
+   ========================================================================== */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter, div.aligncenter {
+    display:block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 0px 0;
+}
+
+a img.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+
+/* ==========================================================================
+   Mediaqueries min-width 1000
+   ========================================================================== */
+
+@media (min-width: 1000px) {
+
+	.inner {
+		padding: 20px;
+	}
+	aside[role="complementary"] > .inner {
+		padding: 20px 20px 20px 0;
+	}
+	.breadcrumbs {
+		padding: 0 20px;
+	}
+
+}
+
+/* ==========================================================================
+   Mediaqueries min-width 767
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+	.logo {
+		margin: 10px 0 0 0;
+		width: 75%;
+	}
+
+	/* Mobil meny */
+	/*#mobile-navigation {
+		display: block;
+	}*/
+	#open-mobile-navigation {
+		display: inline;
+	}
+
+	.col1-border,
+	.col2-border {
+		display: none;
+	}
+
+	/* Menyer */
+	.main-navigation,
+	.topnav,
+	.submenu,
+	.submenu-container {
+		display: none !important;
+	}
+
+	/* Content */
+	.single .post {
+		border-bottom: 0;
+	}
+	.page div[role="main"] > .row-fluid > .inner {
+		padding-left: 10px;
+	}
+
+	/* Sidebar */
+	aside[role="complementary"] {
+		margin-top: 10px;
+		border-top: 1px solid #ccc;
+	}
+	.block {
+		margin: 0 auto 10px;
+	}
+	.block {
+		margin: 0 0 10px 3%;
+		width: 45.5%;
+		float: left;
+		clear: left;
+	}
+	.block:nth-of-type(2n),
+	.block .col6:nth-of-type(2n) {
+		margin: 0 3% 0 0;
+		float: right;
+		clear: right;
+	}
+	.block .span5 {
+		width: 45%;
+	}
+	.block .span5.pull-left {
+		float: left;
+	}
+	.block .span5.pull-right {
+		float: right;
+	}
+	
+	/* Logolimpa */
+	.sponsors {
+		display: none;
+	}
+
+}
+
+/* ==========================================================================
+   Mediaqueries min-width 500
+   ========================================================================== */
+
+@media (max-width: 500px) {
+
+	/*
+	Global
+	 */
+	body {
+		padding: 0 10px;
+		font-size: 0.750em;
+	}
+	h2,
+	.post h2 {
+		font-size: 1.500em;
+	}
+	.archive h2 {
+		margin-bottom: 10px;
+	}
+
+	/*
+	Header
+	 */
+	.banner {
+		margin-bottom: 10px;
+	}
+
+
+	/*
+	Sidebar
+	 */
+	.block {
+		margin: 0 auto 10px auto;
+		width: 100%;
+		float: none;
+		clear: none;
+	}
+	.block:nth-of-type(2n) {
+		margin: 0 auto 10px auto;
+		float: none;
+		clear: none;
+	}
+
+}
