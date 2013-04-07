@@ -40,13 +40,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/img/touch-icon.png" />
         <link rel="icon" type="image/ico" href="<?php bloginfo('template_directory');?>/img/favicon.ico">
-
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/normalize.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/responsive-tables.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/main.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/genericons.css">
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+        
         <script src="<?php bloginfo('template_directory');?>/js/vendor/modernizr-2.6.2.min.js"></script>
         <?php wp_head(); ?>
     </head>
