@@ -225,10 +225,11 @@
 			'orderby' => 'meta_value',
 			'order' => 'ASC',
 			'meta_query' => array(
+				'relation' => 'AND',
 				array(
 					'key' => 'datum',
 					'value' => date('Y-m-d'),
-					'compare' => '>'
+					'compare' => '>='
 				)
 			),
 			'tax_query' => array(
@@ -247,36 +248,104 @@
 		);
 		$loop = new WP_Query($args);
 		$output = null;
-		while ($loop->have_posts() ) : $loop->the_post();
-			$klubbmarke_hemmalag = get_field('klubbmarke_hemmalag');
-			$klubbmarke_bortalag = get_field('klubbmarke_bortalag');
-			$output .= '
-			<header>
-				<h3>'.$text.'</h3>
-			</header>
-			<div class="inner gameinfo-box">
-				<div class="row-fluid">
-					<div class="span5 pull-left">
-						<img src="'.$klubbmarke_hemmalag['url'].'">
-						<span>'.get_field('hemmalag').'</span>
+		if ($loop->have_posts()) :
+			while ($loop->have_posts() ) : $loop->the_post();
+				$klubbmarke_hemmalag = get_field('klubbmarke_hemmalag');
+				$klubbmarke_bortalag = get_field('klubbmarke_bortalag');
+				$output .= '
+				<header>
+					<h3>'.$text.'</h3>
+				</header>
+				<div class="inner gameinfo-box">
+					<div class="row-fluid">
+						<div class="span5 pull-left">
+							<img src="'.$klubbmarke_hemmalag['url'].'">
+							<span>'.get_field('hemmalag').'</span>
+						</div>
+						<div class="span5 pull-right">
+							<img src="'.$klubbmarke_bortalag['url'].'">
+							<span>'.get_field('bortalag').'</span>
+						</div>
 					</div>
-					<div class="span5 pull-right">
-						<img src="'.$klubbmarke_bortalag['url'].'">
-						<span>'.get_field('bortalag').'</span>
+					<div class="row-fluid">
+						<div class="span12">
+							<p>'.get_field('datum') . ' ' . get_field('tid') .'</p>
+						</div>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="span12">
-						<p>'.get_field('datum') . ' ' . get_field('tid') .'</p>
-					</div>
-				</div>
-			</div>
-			'; // output
-		endwhile;
+				'; // output
+			endwhile;
+		endif;
 
 		return $output;
 	}
 	add_shortcode('nextgame', 'shortcode_nextgame');
+
+	/*
+	Shortcode prevgame
+	 */
+	function shortcode_prevgame($attr) {
+		global $post;
+		extract($attr);
+		$args = array(
+			'post_type' => 'matcher',
+			'posts_per_page' => 1,
+			'meta_key' => 'datum',
+			'orderby' => 'meta_value',
+			'order' => 'ASC',
+			'meta_query' => array(
+				array(
+					'key' => 'datum',
+					'value' => date('Y-m-d'),
+					'compare' => '<='
+				)
+			),
+			'tax_query' => array(
+				'relation' => 'AND',
+				array(
+					'taxonomy' => 'serie',
+					'field' => 'slug',
+					'terms' => $serie
+				),
+				array(
+					'taxonomy' => 'sasong',
+					'field' => 'slug',
+					'terms' => $sasong
+				)
+			),
+		);
+		$loop = new WP_Query($args);
+		$output = null;
+		if ($loop->have_posts()) :
+			while ($loop->have_posts() ) : $loop->the_post();
+				$klubbmarke_hemmalag = get_field('klubbmarke_hemmalag');
+				$klubbmarke_bortalag = get_field('klubbmarke_bortalag');
+				$resultat = explode('-', get_field('resultat'));
+				$output .= '
+				<header>
+					<h3>'.$text.'</h3>
+				</header>
+				<div class="inner gameinfo-box">
+					<div class="row-fluid">
+						<div class="span5 pull-left">
+							<img src="'.$klubbmarke_hemmalag['url'].'">
+							<span>'.get_field('hemmalag').'</span>
+							<h2>'.$resultat[0].'</h2>
+						</div>
+						<div class="span5 pull-right">
+							<img src="'.$klubbmarke_bortalag['url'].'">
+							<span>'.get_field('bortalag').'</span>
+							<h2>'.$resultat[1].'</h2>
+						</div>
+					</div>
+				</div>
+				'; // output
+			endwhile;
+		endif;
+
+		return $output;
+	}
+	add_shortcode('prevgame', 'shortcode_prevgame');
 
 	/**
 	 * Add shortcode, matchprogram
