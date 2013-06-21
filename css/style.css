@@ -650,6 +650,10 @@ footer[role="contentinfo"] a:visited {
 footer[role="contentinfo"] a:hover {
 	text-decoration: underline;
 }
+footer[role="contentinfo"] .sponsor a {
+	color: #000;
+	text-decoration: underline;
+}
 
 /* ==========================================================================
    WP-stilar

@@ -46,9 +46,19 @@
                             if ($i == 1) {
                                 echo '<div class="row-fluid">';
                             }
+                            $url = get_field('link');
+                            $logo = get_field('logo');
                             ?>
                                 <div class="span2 sponsor">
-                                    <?php the_title(); ?>
+                                    <?php
+                                        if ($logo) {
+                                            echo '<a href="'.$url.'"><img src="'.$logo.'"></a>';
+                                        } elseif ($url) {
+                                            echo '<a href="'.$url.'">'.get_the_title().'</a>';
+                                        } else {
+                                            the_title();
+                                        }
+                                    ?>
                                 </div>
                             <?php
                             if ($i == 6) {
