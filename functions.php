@@ -187,6 +187,22 @@
 				)
 			)
 		);
+
+		// Post type Loppis
+		register_post_type('loppisen',
+			array(
+				'labels' => array(
+					'name' => __('Loppisen'),
+					'singular_name' => __('Loppis')
+				),
+				'public' => true,
+				'has_archive' => false,
+				'menu_position' => 6,
+				'supports' => array(
+					'title','thumbnail','editor'
+				)
+			)
+		);
 	}
 	add_action('init', 'register_post_types');
 
@@ -291,8 +307,8 @@
 			'post_type' => 'matcher',
 			'posts_per_page' => 1,
 			'meta_key' => 'datum',
-			'orderby' => 'meta_value',
-			'order' => 'ASC',
+			'orderby' => 'meta_value_num',
+			'order' => 'DESC',
 			'meta_query' => array(
 				array(
 					'key' => 'datum',
@@ -342,7 +358,7 @@
 				'; // output
 			endwhile;
 		endif;
-
+		wp_reset_query();
 		return $output;
 	}
 	add_shortcode('prevgame', 'shortcode_prevgame');
@@ -436,7 +452,11 @@
 		while ($loop->have_posts() ) : $loop->the_post();
 
 			$output .= '<tr class="laget-spelare">';
-				$output .= '<td class="laget-spelare-namn"><a href="'.get_permalink().'">'.get_field('trojnummer') . ' '.get_the_title().'</a></td>';
+				$output .= '<td class="laget-spelare-namn">';
+					$output .= '<a href="'.get_permalink().'">';
+						$output .= get_field('trojnummer') . ' '.get_the_title();
+					$output .= '</a>';
+				$output .= '</td>';
 			$output .= '</tr>';
 		endwhile;
 		$output .= '</table>';

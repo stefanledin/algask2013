@@ -4653,7 +4653,8 @@ aside[role="complementary"] > .inner {
 }
 .page-template-default div[role="main"] > .row-fluid > .inner,
 .page-template-page-wide-php div[role="main"] > .row-fluid > .inner,
-.single-spelare div[role="main"] > .row-fluid > .inner {
+.single-spelare div[role="main"] > .row-fluid > .inner,
+.tax-loppiskategori div[role="main"] > .row-fluid > .inner {
 	padding-left: 0;
 }
 

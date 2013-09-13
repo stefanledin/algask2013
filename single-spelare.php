@@ -21,6 +21,7 @@
 						<figure>
 							<?php the_post_thumbnail('thumbnail'); ?>
 						</figure>
+
 						<?php $playerInfo = get_field('information');?>
 						<?php if ($playerInfo) : ?>
 						<table class="responsive">
