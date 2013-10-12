@@ -203,6 +203,19 @@
 				)
 			)
 		);
+
+		// Taxonomy för loppis
+		register_taxonomy(
+			'loppiskategori',
+			'loppisen',
+			array(
+				'hierarchical' => true,
+				'labels' => array(
+					'name' => _x('Loppiskategori'),
+					'singular_name' => 'Loppiskategori'
+				)
+			)
+		);
 	}
 	add_action('init', 'register_post_types');
 
