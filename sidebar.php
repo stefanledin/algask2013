@@ -69,3 +69,4 @@
     }
 
     wp_reset_query();?>
+    <a href="http://clk.tradedoubler.com/click?p=23365&a=2176386&g=20751670&EPI=7891&url=https://svenskaspel.se/svea/forening?id=7891"target="_blank"><img src="http://impse.tradedoubler.com/imp?type(img)g(20751670)a(2176386)" border=0></a>
