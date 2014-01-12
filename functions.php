@@ -211,7 +211,7 @@
 			array(
 				'hierarchical' => true,
 				'labels' => array(
-					'name' => _x('Loppiskategori'),
+					'name' => 'Loppiskategori',
 					'singular_name' => 'Loppiskategori'
 				)
 			)
