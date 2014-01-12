@@ -25,8 +25,9 @@
                         </div>
                         <div class="span3">
                             <h3>Kontakt</h3>
-                            <p>Älgå SK c/o Mikael Nilsson<br>
-                            Spjutvägen 2B 671 93 Arvika</p>
+                            <p>Älgå SK c/o Jessica Adolfsson<br>
+                            Norra Fröbol Karlslund<br>
+                            67193 Arvika</p>
                         </div>
                     </div>
                 </div>
