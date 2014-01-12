@@ -6,16 +6,7 @@
 	<div class="topborder"></div>
 	<div class="row-fluid">
 		<div class="inner">
-			<nav class="submenu-container span2">
-				<ul class="submenu">
-				<?php
-					$loppiskategorier = get_terms('loppiskategori');
-					foreach ($loppiskategorier as $cat) {
-						echo '<li><a href="'.get_term_link($cat).'">'.$cat->name.'</a></li>';
-					}
-				?>
-				</ul>
-			</nav>
+			<?php get_sidebar('loppis'); ?>
 
 			<section class="span6">
 
