@@ -27,6 +27,7 @@
 						<table class="responsive">
 							<tbody>
 								<?php
+									$output .= '<tr><td>Antal stjärnor:</td><td>'.get_player_stars($post).'</td></tr>';
 									$output .= '<tr><td>Född:</td><td>'.get_field('fodelsear').'</td></tr>';
 									$output .= '<tr><td>Moderklubb:</td><td>'.get_field('moderklubb').'</td></tr>';
 									$output .= '<tr><td>Säsonger i Älgå:</td><td>'.get_field('sasonger').'</td></tr>';

@@ -2,6 +2,8 @@
 require 'includes/enqueue-scripts-styles.php';
 require 'includes/posts-to-posts.php';
 require 'includes/players.php';
+
+require 'includes/shortcodes/stjarntoppen.php';
 	
 
 	/*
