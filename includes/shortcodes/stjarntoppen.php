@@ -16,6 +16,7 @@ function shortcode_stjarntoppen( $atts ) {
 		while ( $playerQuery->have_posts() ) : $playerQuery->the_post();
 			global $post;
 			$playerData = array(
+				'id' => get_the_id(),
 				'name' => get_the_title(),
 				'stars' => get_player_stars($post, $post->connected)
 			);
@@ -34,7 +35,7 @@ function shortcode_stjarntoppen( $atts ) {
 			foreach( $data as $player ) :
 				if ( $player['stars'] != 0 ) :
 				$output .= '<tr>';
-					$output .= '<td>'.$player['name'].'</td>';
+					$output .= '<td><a href="'.get_permalink($player['id']).'">'.$player['name'].'</a></td>';
 					$output .= '<td>'.$player['stars'].'</td>';
 				$output .= '</tr>';
 				endif;
