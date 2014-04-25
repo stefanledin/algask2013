@@ -4,6 +4,7 @@ require 'includes/posts-to-posts.php';
 require 'includes/players.php';
 
 require 'includes/shortcodes/stjarntoppen.php';
+require 'includes/shortcodes/skytteliga.php';
 	
 
 	/*
