@@ -21,24 +21,42 @@
 						<figure>
 							<?php the_post_thumbnail('thumbnail'); ?>
 						</figure>
-
-						<?php $playerInfo = get_field('information');?>
+						<h3>Fakta</h3>
+						<table class="responsive">
+							<tbody>
+								<tr><td>Position:</td><td><?php echo array_shift(get_the_terms( $post->ID, 'position' ))->name; ?></td></tr>
+								<tr><td>Född:</td><td><?php the_field('fodelsear'); ?></td></tr>
+								<tr><td>Moderklubb:</td><td><?php the_field('moderklubb'); ?></td></tr>
+								<tr><td>Säsonger i Älgå:</td><td><?php the_field('sasonger'); ?></td></tr>
+							</tbody>
+						</table>
+						<h3>Statistik</h3>
+						<table class="responsive">
+							<tbody>
+								<?php $playerData = get_player_info( $post ); ?>
+								<tr><td>Antal stjärnor:</td><td><?php echo $playerData['stars']; ?></td></tr>
+								<tr><td>Antal mål:</td><td><?php echo $playerData['goals'] ?></td></tr>
+								<tr><td>Antal gula kort:</td><td><?php echo $playerData['cards']['yellow']; ?></td></tr>
+								<tr><td>Antal röda kort:</td><td><?php echo $playerData['cards']['red']; ?></td></tr>
+							</tbody>
+						</table>
+						<?php
+						$playerInfo = get_field('information');
+						if ($playerInfo[0]['fraga']) :
+						?>
+						<h3>Personligt</h3>
 						<table class="responsive">
 							<tbody>
 								<?php
-									$output .= '<tr><td>Antal stjärnor:</td><td>'.get_player_stars($post).'</td></tr>';
-									$output .= '<tr><td>Född:</td><td>'.get_field('fodelsear').'</td></tr>';
-									$output .= '<tr><td>Moderklubb:</td><td>'.get_field('moderklubb').'</td></tr>';
-									$output .= '<tr><td>Säsonger i Älgå:</td><td>'.get_field('sasonger').'</td></tr>';
-									if ($playerInfo[0]['fraga']) :
-										foreach ($playerInfo as $info) {
-											$output .= '<tr><td>'.$info['fraga'].':</td><td>'.$info['svar'].'</td></tr>';
-										}
-									endif;
-									echo $output;
+								$output = '';
+								foreach ($playerInfo as $info) {
+									$output .= '<tr><td>'.$info['fraga'].':</td><td>'.$info['svar'].'</td></tr>';
+								}
+								echo $output;
 								?>
 							</tbody>
 						</table>
+						<?php endif; ?>
 					</article>
 				<?php endwhile; endif;?>
 			</section>
