@@ -372,7 +372,7 @@ require 'includes/shortcodes/skytteliga.php';
 	 */
 	function matchprogram_func($atts)
 	{
-		global $post;
+		#global $post;
 		extract($atts);
 		$args = array(
 			'post_type' => 'matcher',
@@ -408,12 +408,12 @@ require 'includes/shortcodes/skytteliga.php';
 			$output .= '</thead>';
 			$output .= '<tbody>';
 			while ($loop->have_posts() ) : $loop->the_post();
-				$datum = get_post_meta($post->ID, 'datum', true);
-				$tid = get_post_meta($post->ID, 'tid', true);
-				$spelplats = get_post_meta($post->ID, 'spelplats', true);
-				$hemmalag = get_post_meta($post->ID, 'hemmalag', true);
-				$bortalag = get_post_meta($post->ID, 'bortalag', true);
-				$resultat = get_post_meta($post->ID, 'resultat', true);
+				$datum = get_field('datum');
+				$tid = get_field('tid');
+				$spelplats = get_field('spelplats');
+				$hemmalag = get_field('hemmalag');
+				$bortalag = get_field('bortalag');
+				$resultat = get_field('resultat');
 				
 				$output .= '<tr class="matchprogram-match '.$serie.'">';
 					$output .= '<td class="matchprogram-datum">'.$datum.'</td>';
