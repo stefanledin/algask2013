@@ -7,11 +7,13 @@
 	<div class="row-fluid">
 		<article id="<?php the_ID();?>" <?php post_class('span9 clearfix');?>>
 			<h2><?php the_title();?></h2>
+			<?php if (!strcmp(get_field('resultat'), 'Division X: ()') ) : ?>
 			<div class="infobox">
 				<div class="inner">
 					<?php the_field('resultat');?>
 				</div>
 			</div>
+			<?php endif; ?>
 			<div class="post-meta">
 	            <div class="genericon genericon-time"></div><time pubdate><?php _e('Publicerat: '); the_time('Y-m-d H:i');?></time>
 	            <div class="genericon genericon-tag"></div><?php _e('Kategori: ');?><?php the_category(', '); ?>
