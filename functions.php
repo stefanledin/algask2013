@@ -443,6 +443,8 @@ require 'includes/shortcodes/skytteliga.php';
 		$args = array(
 			'post_type' => 'spelare',
 			'posts_per_page' => -1,
+			'orderby' => 'title',
+			'order' => 'ASC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'position',
