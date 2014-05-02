@@ -54,7 +54,7 @@ if ( $gameQuery->have_posts() ) {
 		</div>
 	</div>
 <?php endif; ?>
-<?php if ( isset($cards) ) : ?>
+<?php if ( isset($cards[0]) ) : ?>
 	<div class="infobox">
 		<header>
 			<h3>Kort</h3>
