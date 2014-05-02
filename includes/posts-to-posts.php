@@ -10,6 +10,12 @@ function setup_connection_types () {
 		'sortable' => 'any'
 	) );
 	p2p_register_connection_type( array(
+		'name' => 'games_to_posts',
+		'from' => 'matcher',
+		'to' => 'post',
+		'sortable' => 'any'
+	) );
+	p2p_register_connection_type( array(
 		'name' => 'players_to_games',
 		'from' => 'spelare',
 		'to' => 'matcher',
