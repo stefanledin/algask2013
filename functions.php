@@ -3,14 +3,14 @@ require 'includes/enqueue-scripts-styles.php';
 require 'includes/posts-to-posts.php';
 require 'includes/players.php';
 
+require 'includes/images/images.php';
+require 'includes/images/custom-image-sizes.php';
+
 require 'includes/shortcodes/stjarntoppen.php';
 require 'includes/shortcodes/skytteliga.php';
 	
 
-	/*
-	Thumbnails plz
-	 */
-	add_theme_support('post-thumbnails');
+	
 	
 	/*
 	Registrera menyer
@@ -311,13 +311,18 @@ require 'includes/shortcodes/skytteliga.php';
 			'post_type' => 'matcher',
 			'posts_per_page' => 1,
 			'meta_key' => 'datum',
-			'orderby' => 'meta_value_num',
+			'orderby' => 'meta_value',
 			'order' => 'DESC',
 			'meta_query' => array(
 				array(
 					'key' => 'datum',
 					'value' => date('Y-m-d'),
 					'compare' => '<='
+				),
+				array(
+					'key' => 'resultat',
+					'value' => '-',
+					'compare' => '!='
 				)
 			),
 			'tax_query' => array(
@@ -459,6 +464,7 @@ require 'includes/shortcodes/skytteliga.php';
 
 			$output .= '<tr class="laget-spelare">';
 				$output .= '<td class="laget-spelare-namn">';
+					#$output .= get_the_post_thumbnail(get_the_ID(), 'thumbnail');
 					$output .= '<a href="'.get_permalink().'">';
 						$output .= get_field('trojnummer') . ' '.get_the_title();
 					$output .= '</a>';
@@ -498,19 +504,6 @@ require 'includes/shortcodes/skytteliga.php';
 		return $output;
 	}
 	add_shortcode('nyheter', 'nyheter_func');
-	
-
-	/*
-	Ta bort width och height från bilder
-	 */
-	add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
-	add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
-
-	function remove_thumbnail_dimensions( $html ) {
-	    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-	    return $html;
-	}
-
 
 	/*
 	Ta bort more-hoppet
