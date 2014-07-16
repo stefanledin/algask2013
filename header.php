@@ -12,12 +12,9 @@
 	     */
 	    global $page,
 	    $paged;
-
 	    wp_title( '|', true, 'right' );
-
 	    // Add the blog name.
 	    bloginfo( 'name' );
-
 	    // Add the blog description for the home/front page.
 	    $site_description = get_bloginfo( 'description', 'display' );
 	    if ( $site_description && ( is_home() || is_front_page() ) )
@@ -31,10 +28,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="apple-touch-icon" href="<?php bloginfo('template_directory');?>/img/touch-icon.png" />
         <link rel="icon" type="image/ico" href="<?php bloginfo('template_directory');?>/img/favicon.ico">
-        
-        <!--<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>-->
-        
-        <script src="<?php bloginfo('template_directory');?>/js/vendor/modernizr-2.6.2.min.js"></script>
+                
         <?php wp_head(); ?>
     </head>
     <body <?php body_class()?>>

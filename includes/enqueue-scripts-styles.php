@@ -23,6 +23,8 @@ function load_scripts () {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', '//code.jquery.com/jquery-1.11.0.min.js', null, null, true );
 	wp_enqueue_script( 'jquery' );
+
+	wp_enqueue_script( 'modernizr', $themeDir.'/js/vendor/modernizr-2.6.2.min.js', null, null, true );
 	
 	if ( ($_SERVER['SERVER_NAME'] == 'www.algask.dev') AND !isset($_GET['production']) ) {
 		wp_enqueue_script( 'plugins', $themeDir.'/js/plugins.js', array('jquery'), null, true );
