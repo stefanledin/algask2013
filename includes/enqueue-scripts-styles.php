@@ -14,7 +14,7 @@ function load_scripts () {
 		wp_enqueue_style( 'responsive_tables', $assetsDir.'/responsive-tables.css', null, null, null );
 		wp_enqueue_style( 'stylesheet', $assetsDir.'/style.css', null, null, null );
 	} else {
-		wp_enqueue_style( 'stylesheet', $assetsDir.'/style-min.css', null, filemtime($assetsPath.'/style-min.css'), null );
+		#wp_enqueue_style( 'stylesheet', $assetsDir.'/style-min.css', null, filemtime($assetsPath.'/style-min.css'), null );
 	}
 
 	/*
