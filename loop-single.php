@@ -1,7 +1,9 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php if (get_the_post_thumbnail()) : ?>
 	<figure>
-		<?php the_post_thumbnail('large'); ?>
+		<?php
+		echo Picture::create( 'element', get_post_thumbnail_id() );
+		?>
 	</figure>
 	<?php endif; ?>
 	<div class="row-fluid">

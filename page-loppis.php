@@ -30,7 +30,9 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<article id="<?php the_ID();?>" <?php post_class();?>>
 
-						<?php the_post_thumbnail('medium'); ?>
+						<?php
+						echo Picture::create( 'element', get_post_thumbnail_id() );
+						?>
 						<h2><?php the_title();?></h2>
 						<?php the_content(); ?>
 
