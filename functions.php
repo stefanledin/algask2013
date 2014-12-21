@@ -450,6 +450,8 @@ require 'includes/shortcodes/skytteliga.php';
 			'posts_per_page' => -1,
 			'orderby' => 'title',
 			'order' => 'ASC',
+			'meta_key' => 'aktiv',
+			'meta_value' => true,
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'position',

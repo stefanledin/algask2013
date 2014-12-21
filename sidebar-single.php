@@ -13,7 +13,15 @@ if ( $gameQuery->have_posts() ) {
 		$team = '';
 		foreach( $post->connected as $post) {
 			setup_postdata( $post );
-			$team .= '<a href="'.get_permalink().'">' . get_the_title() . '</a><br>';
+			$is_active = get_post_meta( $post->ID, 'aktiv', true );
+			if ( $is_active ) :
+				$team .= '<a href="'.get_permalink().'">';
+			endif;
+				$team .= get_the_title();
+			if ( $is_active ) :
+				$team .= '</a>';
+			endif;
+			$team .= '<br>';
 			wp_reset_postdata();
 		}
 	}
@@ -29,8 +37,13 @@ if ( $gameQuery->have_posts() ) {
 			<?php
 			foreach ($scorers as $scorer) {
 				$player = get_post($scorer['player'][0]);
+				$is_active = get_post_meta( $player->ID, 'aktiv', true );
 				$output = ($scorer['goal']) ? $scorer['goal'] . ' ' : '';
-				$output .= '<a href="'.get_permalink($player->ID).'">' . $player->post_title . '</a>';
+					if ( $is_active ) :
+						$output .= '<a href="'.get_permalink($player->ID).'">' . $player->post_title . '</a>';
+					else :
+						$output .= $player->post_title;
+					endif;
 				$output .= ($scorer['matchminut']) ? ' (' . $scorer['matchminut'] . ')' : '';
 				echo $output . '<br>';
 			}
@@ -47,8 +60,13 @@ if ( $gameQuery->have_posts() ) {
 			<?php
 			foreach ($stars as $star) {
 				$player = get_post($star['player'][0]);
+				$is_active = get_post_meta( $player->ID, 'aktiv', true );
 				echo ($star['stars'] == '1') ? $star['stars'] . ' stjärna: ' : $star['stars'] . ' stjärnor: ';
-				echo '<a href="'.get_permalink($player->ID).'">' . $player->post_title . '</a><br>';
+				if ( $is_active ) :
+					echo '<a href="'.get_permalink($player->ID).'">' . $player->post_title . '</a><br>';
+				else :
+					echo $player->post_title . '<br>';
+				endif;
 			}
 			?>
 		</div>
@@ -63,7 +81,12 @@ if ( $gameQuery->have_posts() ) {
 			<?php
 			foreach ($cards as $card) {
 				$player = get_post($card['player'][0]);
-				echo (($card['color'] == 'yellow') ? 'Gult: ' : 'Rött: ') . ' <a href="'.get_permalink($player->ID).'">' . $player->post_title . '</a><br>';
+				$is_active = get_post_meta( $player->ID, 'aktiv', true );
+				if ( $is_active ) :
+					echo (($card['color'] == 'yellow') ? 'Gult: ' : 'Rött: ') . ' <a href="'.get_permalink($player->ID).'">' . $player->post_title . '</a><br>';
+				else :
+					echo (($card['color'] == 'yellow') ? 'Gult: ' : 'Rött: ') . $player->post_title . '<br>';
+				endif;
 			}
 			?>
 		</div>

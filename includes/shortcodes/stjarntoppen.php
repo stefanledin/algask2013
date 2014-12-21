@@ -34,8 +34,17 @@ function shortcode_stjarntoppen( $atts ) {
 		$output .= '<tbody>';
 			foreach( $data as $player ) :
 				if ( $player['stars'] != 0 ) :
+				$is_active = get_post_meta( $player['id'], 'aktiv', true );
 				$output .= '<tr>';
-					$output .= '<td><a href="'.get_permalink($player['id']).'">'.$player['name'].'</a></td>';
+					$output .= '<td>';
+						if ( $is_active ) {
+							$output .= '<a href="'.get_permalink($player['id']).'">';
+						}
+						$output .= $player['name'];
+						if ( $is_active ) {
+							$output .= '</a>';
+						}
+					$output .= '</td>';
 					$output .= '<td>'.$player['stars'].'</td>';
 				$output .= '</tr>';
 				endif;
