@@ -29,7 +29,7 @@ if ( $gameQuery->have_posts() ) {
 }
 ?>
 <?php if ( isset($scorers) ) : ?>
-	<div class="infobox">
+	<!--<div class="infobox">
 		<header>
 			<h3>Målskyttar</h3>
 		</header>
@@ -49,7 +49,7 @@ if ( $gameQuery->have_posts() ) {
 			}
 			?>
 		</div>
-	</div>
+	</div>-->
 <?php endif; ?>
 <?php if ( isset($stars) ) : ?>
 	<div class="infobox">
