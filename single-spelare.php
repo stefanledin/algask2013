@@ -30,16 +30,17 @@
 								<tr><td>Säsonger i Älgå:</td><td><?php the_field('sasonger'); ?></td></tr>
 							</tbody>
 						</table>
+						<?php if ( array_shift(get_the_terms( $post->ID, 'position' ))->slug != 'ledare' ) : ?>
 						<h3>Statistik</h3>
 						<table class="responsive">
 							<tbody>
 								<?php $playerData = get_player_info( $post ); ?>
-								<tr><td>Antal stjärnor:</td><td><?php echo $playerData['stars']; ?></td></tr>
 								<tr><td>Antal mål:</td><td><?php echo $playerData['goals'] ?></td></tr>
 								<tr><td>Antal gula kort:</td><td><?php echo $playerData['cards']['yellow']; ?></td></tr>
 								<tr><td>Antal röda kort:</td><td><?php echo $playerData['cards']['red']; ?></td></tr>
 							</tbody>
 						</table>
+						<?php endif; ?>
 						<?php
 						$playerInfo = get_field('information');
 						if ($playerInfo[0]['fraga']) :
