@@ -1,0 +1,74 @@
+@import 'bootstrap';
+
+$blue: #2d68b2;
+$dark-blue: #2b3087;
+$light-blue: #9ab8ff;
+
+/* ==========================================================================
+   Globals
+   ========================================================================== */
+body {
+    background: $blue;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-fluid {
+    max-width: 1170px;
+}
+.inner-section {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 95%;
+}
+
+.box-w-shadow {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0, .5); 
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+    margin: 0 0 100px 0;
+    padding: 10px 0;
+}
+
+/* ==========================================================================
+   Lottlistan
+   ========================================================================== */
+.lot-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.lot-number {
+    float: left;
+    display: block;
+    background: $light-blue;
+    border: 1px solid white;
+    text-align: center;
+    color: $dark-blue;
+    width: 10%;
+    &:hover {
+        background: $dark-blue;
+        color: white;
+    }
+    label {
+        margin: 0;
+        height: 100px;
+        display: block;
+        font-weight: normal;
+        cursor: pointer;
+    }
+    input {
+        display: none;
+    }
+    h3 {
+        margin: 0;
+        line-height: 100px;
+    }
+}
