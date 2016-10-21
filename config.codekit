@@ -53,6 +53,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/algajokern\/javascripts\/app.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/algajokern\/javascripts\/app.js",
+		"outputAbbreviatedPath": "\/algajokern\/javascripts\/min\/app-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/algajokern\/javascripts\/bootstrap-sprockets.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -213,6 +224,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/algajokern\/javascripts\/bootstrap\/transition.js",
 		"outputAbbreviatedPath": "\/algajokern\/javascripts\/bootstrap\/min\/transition-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/algajokern\/javascripts\/min\/app-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/algajokern\/javascripts\/min\/app-min.js",
+		"outputAbbreviatedPath": "\/algajokern\/javascripts\/min\/min\/app-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

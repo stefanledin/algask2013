@@ -5810,7 +5810,8 @@ button.close {
    Globals
    ========================================================================== */
 body {
-  background: #2d68b2; }
+  background: #2d68b2;
+  padding-bottom: 20px; }
 
 img {
   max-width: 100%;

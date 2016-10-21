@@ -55,79 +55,80 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-8">
-                                    <h2>1. Välj nummer</h2>
-                                    <form>
+                            <form>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8">
+                                        <h2>1. Välj nummer</h2>
                                         <div class="form-group">
                                             <label for="search-number">Sök nummer</label>
                                             <input type="text" id="search-number" class="form-control" placeholder="Sök nummer">
                                         </div>
-                                    </form>
-                                    <ol class="lot-list">
-                                    <?php for ( $i = 0; $i < 100; $i++ ) : ?>
-                                        <li class="lot-number">
-                                            <label>
-                                                <h3><?php echo sprintf('%02d', $i);?></h3>
-                                                <input type="checkbox">
-                                            </label>
-                                        </li>
-                                    <?php endfor; ?>
-                                    </ol>
-                                                
+                                        <ol class="lot-list">
+                                        <?php for ( $i = 0; $i < 100; $i++ ) : ?>
+                                            <li class="lot-number">
+                                                <label>
+                                                    <h3><?php echo sprintf('%02d', $i);?></h3>
+                                                    <input type="checkbox" name="lot-number" v-model="lot_number" value="<?php echo sprintf('%02d', $i);?>">
+                                                </label>
+                                            </li>
+                                        <?php endfor; ?>
+                                        </ol>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <h2>2. Välj antal veckor</h2>
+                                        <div class="input-group">
+                                            <label for="select-weeks">Veckor</label>
+                                            <input type="number" id="select-weeks" class="form-control" min="1" value="1">
+                                        </div>
+                                        <p class="help-block">Kostnad: 20 kr</p>
+
+                                        <h2>3. Välj betalmetod</h2>
+                                        
+                                            <div class="form-group">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="payment_method" value="Swish" checked="checked">
+                                                        Swish
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="payment_method" value="Kontoöverföring">
+                                                        Kontoöverföring
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="payment_method" value="Bankgiro">
+                                                        Bankgiro
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Swish</h3>
+                                            </div>
+                                            <div class="panel-body">Lorem ipsum dolor sit amet.</div>
+                                        </div>
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Kontoöverföring</h3>
+                                            </div>
+                                            <div class="panel-body">Lorem ipsum dolor sit amet.</div>
+                                        </div>
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Bankgiro</h3>
+                                            </div>
+                                            <div class="panel-body">Lorem ipsum dolor sit amet.</div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
-                                    <h2>2. Välj betalmetod</h2>
-                                    
-                                    <form action="">
-                                        <div class="form-group">
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="payment_method" value="Swish" checked="checked">
-                                                    Swish
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="payment_method" value="Kontoöverföring">
-                                                    Kontoöverföring
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="payment_method" value="Bankgiro">
-                                                    Bankgiro
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Swish</h3>
-                                        </div>
-                                        <div class="panel-body">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Kontoöverföring</h3>
-                                        </div>
-                                        <div class="panel-body">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Bankgiro</h3>
-                                        </div>
-                                        <div class="panel-body">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-
-                                    <h2>3. Dina uppgifter</h2>
-                                    
-
-                                </div>
-                            </div>
+                            </form>
 
                         </section>
                     </main>
@@ -137,6 +138,8 @@
         </div>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ); ?>/algajokern/javascripts/bootstrap.min.js"></script>
+        <script src="<?php bloginfo( 'template_directory' ); ?>/algajokern/javascripts/app.js"></script>
     </body>
 </html>
