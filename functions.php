@@ -205,6 +205,13 @@ require 'includes/shortcodes/skytteliga.php';
 				)
 			)
 		);
+
+		register_post_type( 'jokernummer', array(
+			'label' => 'Jokernummer',
+			'public' => true,
+			'menu_icon' => 'dashicons-tickets-alt',
+			'supports' => array('title')
+		) );
 	}
 	add_action('init', 'register_post_types');
 

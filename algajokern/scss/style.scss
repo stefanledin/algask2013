@@ -1,8 +1,10 @@
-@import 'bootstrap';
-
 $blue: #2d68b2;
 $dark-blue: #2b3087;
 $light-blue: #9ab8ff;
+$brand-primary: $blue;
+
+@import 'bootstrap';
+
 
 /* ==========================================================================
    Globals
@@ -38,6 +40,13 @@ img {
     padding: 10px 0;
 }
 
+.alert {
+    background: $blue;
+    color: white;
+    //border: 2px solid $dark-blue;
+    text-align: center;
+}
+
 /* ==========================================================================
    Lottlistan
    ========================================================================== */
@@ -55,6 +64,11 @@ img {
     color: $dark-blue;
     width: 10%;
     &:hover {
+        background: $blue;
+        color: white;
+        cursor: pointer;
+    }
+    &.reserved {
         background: $dark-blue;
         color: white;
     }
@@ -63,7 +77,6 @@ img {
         height: 100px;
         display: block;
         font-weight: normal;
-        cursor: pointer;
     }
     input {
         display: none;

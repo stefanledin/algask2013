@@ -1,1 +1,1 @@
-!function(n,o,$,e){new Vue({el:"form",data:{lot_number:[]},watch:{lot_number:function(n){console.log(n)}}})}(window,document,jQuery);
+!function(e,t,$,n){new Vue({el:"form",data:{lotNumbers:[],name:"",phonenumber:"",payment_method:"Swish",weeks:1,cost:0},computed:{selectedLotNumbers:function(){return this.lotNumbers.join(", ")},cost:function(){return 20*this.lotNumbers.length*this.weeks}},methods:{selectLotNumber:function(e){var t=e.target,n=t.parentElement,o=n.parentElement;o.classList.toggle("reserved")}}})}(window,document,jQuery);

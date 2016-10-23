@@ -1,3 +1,40 @@
+<?php
+$taken_joker_numbers = get_posts( array(
+    'post_type' => 'jokernummer',
+    'posts_per_page' => -1
+) );
+
+function save_joker_numbers() {
+    $numbers = $_POST['lot-numbers'];
+    foreach ( $numbers as $number ) {
+        $number = (int) wp_strip_all_tags( $number );
+        if ( get_page_by_title( $number, 'object', 'jokernummer' ) == null ) {
+            save_joker_number($number);
+        }
+    }
+}
+
+function save_joker_number($number) {
+    $post_id = wp_insert_post( array(
+        'post_type' => 'jokernummer',
+        'post_status' => 'publish',
+        'post_title' => $number,
+        'post_content' => '',
+        'post_author' => 1
+    ), true );
+
+    $owner_name = wp_strip_all_tags( $_POST['owner-name'] );
+    $owner_phone = wp_strip_all_tags( $_POST['phonenumber'] );
+    $selected_weeks = wp_strip_all_tags( $_POST['selected-weeks'] );
+    $booking_date = date('ymd');
+
+    update_post_meta( $post_id, 'joker_number_verified', false );
+    update_post_meta( $post_id, 'joker_number_owner_name', $owner_name );
+    update_post_meta( $post_id, 'joker_number_owner_phone', $owner_phone );
+    update_post_meta( $post_id, 'joker_number_weeks_booked', $selected_weeks );
+    update_post_meta( $post_id, 'joker_number_booking_date', $booking_date );
+}
+?>
 <!doctype html>
 <html>
     <head>
@@ -24,6 +61,28 @@
                 </div>
             </div>
         </header>
+
+        <?php 
+        if ( isset($_POST['_wpnonce']) ) :
+            if ( wp_verify_nonce( $_POST['_wpnonce'], 'reserve_joker_number' ) ) :
+                save_joker_numbers();
+                ?>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="alert">
+                                <section class="inner-section">
+                                    <h1>Tack <?php echo $_POST['owner-name'];?>!</h1>
+                                    <p>Du har bokat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+            endif;
+        endif;
+        ?>
 
         <div class="container-fluid">
             <div class="row">
@@ -55,20 +114,22 @@
                                 </div>
                             </div>
 
-                            <form>
+                            <form action="<?php the_permalink();?>" method="POST">
+                                <?php wp_nonce_field( 'reserve_joker_number' ); ?>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-8">
                                         <h2>1. Välj nummer</h2>
-                                        <div class="form-group">
-                                            <label for="search-number">Sök nummer</label>
-                                            <input type="text" id="search-number" class="form-control" placeholder="Sök nummer">
-                                        </div>
                                         <ol class="lot-list">
                                         <?php for ( $i = 0; $i < 100; $i++ ) : ?>
-                                            <li class="lot-number">
+                                            <?php 
+                                            $is_taken = array_filter( $taken_joker_numbers, function( $number ) use ($i) {
+                                                return $number->post_title == $i;
+                                            } );
+                                            ?>
+                                            <li class="lot-number <?php echo ( $is_taken ) ? 'taken' : 'avaliable' ;?>">
                                                 <label>
                                                     <h3><?php echo sprintf('%02d', $i);?></h3>
-                                                    <input type="checkbox" name="lot-number" v-model="lot_number" value="<?php echo sprintf('%02d', $i);?>">
+                                                    <input type="checkbox" name="lot-numbers[]" v-model="lotNumbers" v-on:click="selectLotNumber" value="<?php echo sprintf('%02d', $i);?>">
                                                 </label>
                                             </li>
                                         <?php endfor; ?>
@@ -76,54 +137,114 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
                                         <h2>2. Välj antal veckor</h2>
-                                        <div class="input-group">
-                                            <label for="select-weeks">Veckor</label>
-                                            <input type="number" id="select-weeks" class="form-control" min="1" value="1">
+                                        <div class="form-group">
+                                            <label for="selected-weeks">Veckor</label>
+                                            <input type="number" id="selected-weeks" name="selected-weeks" class="form-control" min="1" v-model="weeks">
                                         </div>
-                                        <p class="help-block">Kostnad: 20 kr</p>
-
-                                        <h2>3. Välj betalmetod</h2>
+                                        <div class="well">
+                                            Pris: {{cost}} kr
+                                        </div>
                                         
+                                        <div v-show="lotNumbers.length">
+                                            <h2>3. Dina uppgifter</h2>
                                             <div class="form-group">
+                                                <label for="name">Namn</label>
+                                                <input type="text" class="form-control" id="name" name="owner-name" placeholder="Namn" v-model="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="phonenumber">Telefonnummer</label>
+                                                <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="Telefonnummer" v-model="phonenumber">
+                                            </div>
+                                            
+                                            
+                                            <div class="form-group">
+                                                <strong>Betalmetod:</strong>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="payment_method" value="Swish" checked="checked">
+                                                        <input type="radio" name="payment_method" value="Swish" checked="checked" v-model="payment_method">
                                                         Swish
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="payment_method" value="Kontoöverföring">
+                                                        <input type="radio" name="payment_method" value="Kontoöverföring" v-model="payment_method">
                                                         Kontoöverföring
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="payment_method" value="Bankgiro">
+                                                        <input type="radio" name="payment_method" value="Bankgiro" v-model="payment_method">
                                                         Bankgiro
                                                     </label>
                                                 </div>
                                             </div>
-
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Swish</h3>
+                                            
+                                            <div class="panel panel-primary" v-if="payment_method == 'Swish'">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">Swish</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    Swisha {{cost}} kronor till 070-283 71 34.<br>
+                                                    <strong>Meddelande:</strong> 
+                                                    <span v-show="lotNumbers.length">
+                                                        {{selectedLotNumbers}}. 
+                                                        {{weeks}} <span v-if="weeks == 1">vecka</span><span v-else>veckor</span>.
+                                                    </span>
+                                                    <hr>
+                                                    <div>
+                                                        <strong>Exempel:</strong>
+                                                        <img src="<?php bloginfo( 'template_directory' ); ?>/algajokern/images/example-swish.jpg" alt="Swish">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="panel-body">Lorem ipsum dolor sit amet.</div>
-                                        </div>
-
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Kontoöverföring</h3>
+                                            
+                                            <div class="panel panel-primary" v-if="payment_method == 'Kontoöverföring'">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">Kontoöverföring</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    För över {{cost}} kronor till kontonummer 5844-6469.<br>
+                                                    <strong>Meddelande:</strong><br>
+                                                    <span v-show="name">{{name}}.</span>
+                                                    <span v-show="phonenumber">{{phonenumber}}.</span>
+                                                    <span v-show="lotNumbers.length">
+                                                        Nummer {{selectedLotNumbers}}. 
+                                                        {{weeks}} <span v-if="weeks == 1">vecka</span><span v-else>veckor</span>.
+                                                    </span>
+                                                    <hr>
+                                                    <div>
+                                                        <strong>Exempel:</strong>
+                                                        
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="panel-body">Lorem ipsum dolor sit amet.</div>
-                                        </div>
-
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Bankgiro</h3>
+                                            
+                                            <div class="panel panel-primary" v-if="payment_method == 'Bankgiro'">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">Bankgiro</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    För över {{cost}} kronor till bankgironummer 5844-6469.<br>
+                                                    <strong>Meddelande:</strong><br>
+                                                    <span v-show="name">{{name}}.</span>
+                                                    <span v-show="phonenumber">{{phonenumber}}.</span>
+                                                    <span v-show="lotNumbers.length">
+                                                        Nummer {{selectedLotNumbers}}. 
+                                                        {{weeks}} <span v-if="weeks == 1">vecka</span><span v-else>veckor</span>.
+                                                    </span>
+                                                    <hr>
+                                                    <div>
+                                                        <strong>Exempel:</strong>
+                                                        <img src="<?php bloginfo( 'template_directory' ); ?>/algajokern/images/example-bankaccount.png" alt="Bankgiro">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="panel-body">Lorem ipsum dolor sit amet.</div>
+                                            
+                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. Om du inte betalat inom 12 timmar släpps reservationen. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade.</strong></p>
+                                            
+                                            <div class="input-group">
+                                                <button type="submit" class="btn btn-primary">Reservera</button>
+                                            </div>
                                         </div>
 
                                     </div>
