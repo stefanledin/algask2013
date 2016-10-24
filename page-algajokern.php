@@ -26,6 +26,7 @@ function save_joker_number($number) {
     $owner_name = wp_strip_all_tags( $_POST['owner-name'] );
     $owner_phone = wp_strip_all_tags( $_POST['phonenumber'] );
     $selected_weeks = wp_strip_all_tags( $_POST['selected-weeks'] );
+    $payment_method = wp_strip_all_tags( $_POST['payment_method'] );
     $booking_date = date('ymd');
 
     update_post_meta( $post_id, 'joker_number_verified', false );
@@ -33,6 +34,7 @@ function save_joker_number($number) {
     update_post_meta( $post_id, 'joker_number_owner_phone', $owner_phone );
     update_post_meta( $post_id, 'joker_number_weeks_booked', $selected_weeks );
     update_post_meta( $post_id, 'joker_number_booking_date', $booking_date );
+    update_post_meta( $post_id, 'joker_number_payment_method', $payment_method );
 }
 ?>
 <!doctype html>
@@ -73,7 +75,7 @@ function save_joker_number($number) {
                             <div class="alert">
                                 <section class="inner-section">
                                     <h1>Tack <?php echo $_POST['owner-name'];?>!</h1>
-                                    <p>Du har bokat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
+                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
                                 </section>
                             </div>
                         </div>
@@ -93,16 +95,16 @@ function save_joker_number($number) {
                             
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4 text-center">
-                                    <h1><small>Vinstchansen:</small><br>1.000 kr/veckan</h1>
-                                    <p>Ta chansen att vinna 1.000 kronor i veckan samtidigt som du stödjer Älgå SK.</p>
+                                    <h1><small>Satsa 20 kr</small><br>Vinn 1.000 kr</h1>
+                                    <p>För 20 kronor/nummer har du chansen att vinna 1.000 kronor – samtidigt som du stödjer Älgå SK.</p>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 text-center">
-                                    <h1><small>Insatsen:</small><br>20 kr/nummer</h1>
-                                    <p>För endast 20 kronor per valt nummer har du chansen att bli 1.000 kronor rikare.</p>
+                                    <h1><small>Lottodragningen</small><br>Chans varje lördag</h1>
+                                    <p>De två sista jokernumren från lördagens <a href="https://www.svenskaspel.se/lotto" target="_blank">Lotto</a> är också veckans vinnare i Älgåjokern.</p>
                                 </div>
                                 <div class="col-xs-12 col-sm-4 text-center">
-                                    <h1><small>Du väljer:</small><br>Ditt turnummer</h1>
-                                    <p>Boka ditt, eller dina, turnummer under så många veckor som du själv önskar.</p>
+                                    <h1><small>Fritt antal veckor</small><br>Ditt turnummer</h1>
+                                    <p>Boka ditt, eller dina, turnummer under så många veckor du önskar ha chansen att vinna.</p>
                                 </div>
                             </div>
 
@@ -122,14 +124,14 @@ function save_joker_number($number) {
                                         <ol class="lot-list">
                                         <?php for ( $i = 0; $i < 100; $i++ ) : ?>
                                             <?php 
-                                            $is_taken = array_filter( $taken_joker_numbers, function( $number ) use ($i) {
+                                            $is_taken = array_shift( array_filter( $taken_joker_numbers, function( $number ) use ($i) {
                                                 return $number->post_title == $i;
-                                            } );
+                                            } ) );
                                             ?>
-                                            <li class="lot-number <?php echo ( $is_taken ) ? 'taken' : 'avaliable' ;?>">
+                                            <li class="lot-number <?php echo ( $is_taken ) ? 'taken' : 'avaliable';?>">
                                                 <label>
                                                     <h3><?php echo sprintf('%02d', $i);?></h3>
-                                                    <input type="checkbox" name="lot-numbers[]" v-model="lotNumbers" v-on:click="selectLotNumber" value="<?php echo sprintf('%02d', $i);?>">
+                                                    <input type="checkbox" name="lot-numbers[]" v-model="lotNumbers" v-on:click="selectLotNumber" value="<?php echo sprintf('%02d', $i);?>" <?php echo ( $is_taken ) ? 'disabled="disabled"' : '';?>>
                                                 </label>
                                             </li>
                                         <?php endfor; ?>
@@ -181,7 +183,7 @@ function save_joker_number($number) {
                                             
                                             <div class="panel panel-primary" v-if="payment_method == 'Swish'">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">Swish</h3>
+                                                    <h3 class="panel-title">Instrukationer: Swish</h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     Swisha {{cost}} kronor till 070-283 71 34.<br>
@@ -200,7 +202,7 @@ function save_joker_number($number) {
                                             
                                             <div class="panel panel-primary" v-if="payment_method == 'Kontoöverföring'">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">Kontoöverföring</h3>
+                                                    <h3 class="panel-title">Instrukationer: Kontoöverföring</h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     För över {{cost}} kronor till kontonummer 5844-6469.<br>
@@ -221,7 +223,7 @@ function save_joker_number($number) {
                                             
                                             <div class="panel panel-primary" v-if="payment_method == 'Bankgiro'">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">Bankgiro</h3>
+                                                    <h3 class="panel-title">Instrukationer: Bankgiro</h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     För över {{cost}} kronor till bankgironummer 5844-6469.<br>

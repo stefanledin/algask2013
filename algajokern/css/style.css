@@ -5864,6 +5864,8 @@ img {
   .lot-number.reserved {
     background: #2b3087;
     color: white; }
+  .lot-number.taken {
+    opacity: .2; }
   .lot-number label {
     margin: 0;
     height: 100px;

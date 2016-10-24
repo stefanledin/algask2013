@@ -72,6 +72,9 @@ img {
         background: $dark-blue;
         color: white;
     }
+    &.taken {
+        opacity: .2;
+    }
     label {
         margin: 0;
         height: 100px;
