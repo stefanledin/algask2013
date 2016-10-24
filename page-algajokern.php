@@ -1,9 +1,4 @@
 <?php
-$taken_joker_numbers = get_posts( array(
-    'post_type' => 'jokernummer',
-    'posts_per_page' => -1
-) );
-
 function save_joker_numbers() {
     $numbers = $_POST['lot-numbers'];
     foreach ( $numbers as $number ) {
@@ -75,7 +70,7 @@ function save_joker_number($number) {
                             <div class="alert">
                                 <section class="inner-section">
                                     <h1>Tack <?php echo $_POST['owner-name'];?>!</h1>
-                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
+                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat. Betalningen måste vara gjord senast klockan 18 kommande lördag.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
                                 </section>
                             </div>
                         </div>
@@ -122,6 +117,12 @@ function save_joker_number($number) {
                                     <div class="col-xs-12 col-sm-8">
                                         <h2>1. Välj nummer</h2>
                                         <ol class="lot-list">
+                                        <?php 
+                                        $taken_joker_numbers = get_posts( array(
+                                            'post_type' => 'jokernummer',
+                                            'posts_per_page' => -1
+                                        ) );
+                                        ?>
                                         <?php for ( $i = 0; $i < 100; $i++ ) : ?>
                                             <?php 
                                             $is_taken = array_shift( array_filter( $taken_joker_numbers, function( $number ) use ($i) {
@@ -205,7 +206,7 @@ function save_joker_number($number) {
                                                     <h3 class="panel-title">Instrukationer: Kontoöverföring</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    För över {{cost}} kronor till kontonummer 5844-6469.<br>
+                                                    För över {{cost}} kronor till kontonummer XXXXXXXXXX.<br>
                                                     <strong>Meddelande:</strong><br>
                                                     <span v-show="name">{{name}}.</span>
                                                     <span v-show="phonenumber">{{phonenumber}}.</span>
@@ -242,7 +243,7 @@ function save_joker_number($number) {
                                                 </div>
                                             </div>
                                             
-                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. Om du inte betalat inom 12 timmar släpps reservationen. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade.</strong></p>
+                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade. Betalningen måste vara gjord senast klockan 18 kommande lördag.</strong></p>
                                             
                                             <div class="input-group">
                                                 <button type="submit" class="btn btn-primary">Reservera</button>
