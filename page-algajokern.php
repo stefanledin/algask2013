@@ -48,11 +48,13 @@ function save_joker_number($number) {
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="pull-left">
-                            <img src="<?php bloginfo( 'template_directory' );?>/algajokern/images/algajokern-logo.png" alt="Älgåjokern">
-                            <img src="<?php bloginfo( 'template_directory' );?>/algajokern/images/algajokern-text-logo.png" alt="Älgåjokern">
+                            <div class="joker-logo">
+                                <img class="symbol" src="<?php bloginfo( 'template_directory' );?>/algajokern/images/algajokern-logo.png" alt="Älgåjokern">
+                                <img class="text" src="<?php bloginfo( 'template_directory' );?>/algajokern/images/algajokern-text-logo.png" alt="Älgåjokern">
+                            </div>
                         </div>
                         <div class="pull-right">
-                            <img src="<?php bloginfo( 'template_directory' );?>/algajokern/images/algask-klubbmarke.svg" alt="Älgå Sportklubb">
+                            <img class="club-logo" src="<?php bloginfo( 'template_directory' );?>/algajokern/images/algask-klubbmarke.svg" alt="Älgå Sportklubb">
                         </div>
                     </div>
                 </div>
@@ -70,7 +72,7 @@ function save_joker_number($number) {
                             <div class="alert">
                                 <section class="inner-section">
                                     <h1>Tack <?php echo $_POST['owner-name'];?>!</h1>
-                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat. Betalningen måste vara gjord senast klockan 18 kommande lördag.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
+                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat. Betalningen måste vara gjord senast klockan 18 lördagen den 5 november.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
                                 </section>
                             </div>
                         </div>
@@ -174,12 +176,12 @@ function save_joker_number($number) {
                                                         Kontoöverföring
                                                     </label>
                                                 </div>
-                                                <div class="radio">
+                                                <!--<div class="radio">
                                                     <label>
                                                         <input type="radio" name="payment_method" value="Bankgiro" v-model="payment_method">
                                                         Bankgiro
                                                     </label>
-                                                </div>
+                                                </div>-->
                                             </div>
                                             
                                             <div class="panel panel-primary" v-if="payment_method == 'Swish'">
@@ -206,23 +208,22 @@ function save_joker_number($number) {
                                                     <h3 class="panel-title">Instrukationer: Kontoöverföring</h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    För över {{cost}} kronor till kontonummer XXXXXXXXXX.<br>
+                                                    För över {{cost}} kronor till kontonummer 8431-9, 53 012 168-0.<br>
                                                     <strong>Meddelande:</strong><br>
                                                     <span v-show="name">{{name}}.</span>
                                                     <span v-show="phonenumber">{{phonenumber}}.</span>
                                                     <span v-show="lotNumbers.length">
-                                                        Nummer {{selectedLotNumbers}}. 
-                                                        {{weeks}} <span v-if="weeks == 1">vecka</span><span v-else>veckor</span>.
+                                                        Nr {{selectedLotNumbers}}. {{weeks}}
                                                     </span>
                                                     <hr>
                                                     <div>
                                                         <strong>Exempel:</strong>
-                                                        
+                                                        <img src="<?php bloginfo( 'template_directory' );?>/algajokern/images/example-bankaccount.png" alt="Kontoöverföring">
                                                     </div>
                                                 </div>
                                             </div>
                                             
-                                            <div class="panel panel-primary" v-if="payment_method == 'Bankgiro'">
+                                            <!--<div class="panel panel-primary" v-if="payment_method == 'Bankgiro'">
                                                 <div class="panel-heading">
                                                     <h3 class="panel-title">Instrukationer: Bankgiro</h3>
                                                 </div>
@@ -241,9 +242,9 @@ function save_joker_number($number) {
                                                         <img src="<?php bloginfo( 'template_directory' ); ?>/algajokern/images/example-bankaccount.png" alt="Bankgiro">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                             
-                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade. Betalningen måste vara gjord senast klockan 18 kommande lördag.</strong></p>
+                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade. Betalningen måste vara gjord senast klockan 18 lördagen den 5 november.</strong></p>
                                             
                                             <div class="input-group">
                                                 <button type="submit" class="btn btn-primary">Reservera</button>

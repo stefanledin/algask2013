@@ -5822,7 +5822,7 @@ img {
 
 .inner-section {
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 20px 0;
   width: 95%; }
 
 .box-w-shadow {
@@ -5833,8 +5833,21 @@ img {
    Header
    ========================================================================== */
 .site-header {
-  margin: 0 0 100px 0;
+  margin: 0 0 50px 0;
   padding: 10px 0; }
+
+.joker-logo img {
+  max-width: 90px; }
+.joker-logo .symbol {
+  max-height: 100px;
+  float: left; }
+.joker-logo .text {
+  margin: 30px 0 0 10px;
+  max-height: 43px; }
+
+.club-logo {
+  width: 50px;
+  max-height: 100px; }
 
 .alert {
   background: #2d68b2;
@@ -5856,7 +5869,7 @@ img {
   border: 1px solid white;
   text-align: center;
   color: #2b3087;
-  width: 10%; }
+  width: 20%; }
   .lot-number:hover {
     background: #2d68b2;
     color: white;
@@ -5876,3 +5889,20 @@ img {
   .lot-number h3 {
     margin: 0;
     line-height: 100px; }
+
+@media (min-width: 568px) {
+  .site-header {
+    margin: 0 0 100px 0; }
+
+  .joker-logo img {
+    max-width: none; }
+
+  .club-logo {
+    width: 100%;
+    max-height: 100px; }
+
+  .inner-section {
+    padding: 40px 0; }
+
+  .lot-number {
+    width: 10%; } }
