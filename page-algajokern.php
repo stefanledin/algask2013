@@ -38,6 +38,16 @@ function save_joker_number($number) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="fb:app_id" content="675650232448908"/>
+        <meta property="og:url" content="http://www.algask.se/algajokern"/>
+        <meta property="og:title" content="Älgåjokern | Älgå Sportklubb"/>
+        <meta property="og:site_name" content="Älgåjokern | Älgå Sportklubb"/>
+        <meta property="og:description" content="Chans på 1.000 kr/vecka. Dragning varje lördag."/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="<?php bloginfo( 'template_directory' );?>/algajokern/images/share.jpg"/>
+        <meta property="og:locale" content="sv_se"/>
         <title>Älgåjokern | Älgå Sportklubb</title>
         <link rel="stylesheet" href="<?php bloginfo( 'template_directory' );?>/algajokern/css/style.css">
     </head>
@@ -89,6 +99,14 @@ function save_joker_number($number) {
 
                     <main class="box-w-shadow">
                         <section class="inner-section">
+
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h1>Första dragningen: 5 november<br><small>Ta chansen och var med från början</small></h1>
+                                </div>
+                            </div>
+
+                            <hr>
                             
                             <div class="row">
                                 <div class="col-xs-12 col-sm-4 text-center">
@@ -108,8 +126,9 @@ function save_joker_number($number) {
                             <hr>
 
                             <div class="row">
-                                <div class="col-xs-12">
+                                <div class="col-xs-12 col-sm-8">
                                     <h1>Köp jokernummer</h1>
+                                    <p>Välj ett eller flera nummer mellan 00–99 för 20 kronor styck i veckan. <strong>Tips:</strong> boka ett nummer i fem veckor för 100 kronor och missa inte chansen att vinna!<br>Betalning görs genom Swish eller kontoöverföring.</p>
                                 </div>
                             </div>
 
@@ -266,5 +285,11 @@ function save_joker_number($number) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ); ?>/algajokern/javascripts/bootstrap.min.js"></script>
         <script src="<?php bloginfo( 'template_directory' ); ?>/algajokern/javascripts/app.js"></script>
+        <script>
+            var _gaq=[['_setAccount','UA-30098036-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>
