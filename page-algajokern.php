@@ -128,7 +128,7 @@ function save_joker_number($number) {
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
                                     <h1>Köp jokernummer</h1>
-                                    <p>Välj ett eller flera nummer mellan 00–99 för 20 kronor styck i veckan. <strong>Tips:</strong> boka ett nummer i fem veckor för 100 kronor och missa inte chansen att vinna!<br>Betalning görs genom Swish eller kontoöverföring.</p>
+                                    <p>Välj ett eller flera nummer mellan 00–99 för 20 kronor styck i veckan. <strong>Tips:</strong> boka ett nummer i fem veckor för 100 kronor och missa inte chansen att vinna!<br>Betalning görs genom Swish eller bankgiro.</p>
                                 </div>
                             </div>
 
@@ -205,7 +205,7 @@ function save_joker_number($number) {
                                             
                                             <div class="panel panel-primary" v-if="payment_method == 'Swish'">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">Instrukationer: Swish</h3>
+                                                    <h3 class="panel-title">Instruktioner: Swish</h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     Swisha {{cost}} kronor till 070-283 71 34.<br>
@@ -244,7 +244,7 @@ function save_joker_number($number) {
                                             
                                             <div class="panel panel-primary" v-if="payment_method == 'Bankgiro'">
                                                 <div class="panel-heading">
-                                                    <h3 class="panel-title">Instrukationer: Bankgiro</h3>
+                                                    <h3 class="panel-title">Instruktioner: Bankgiro</h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     För över {{cost}} kronor till bankgironummer 5410-7404.<br>
