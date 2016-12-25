@@ -82,7 +82,7 @@ function save_joker_number($number) {
                             <div class="alert">
                                 <section class="inner-section">
                                     <h1>Tack <?php echo $_POST['owner-name'];?>!</h1>
-                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat. Betalningen måste vara gjord senast klockan 18 lördagen den 5 november.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
+                                    <p>Du har reserverat jokernummer <?php echo implode(', ', $_POST['lot-numbers']);?> i <?php echo $_POST['selected-weeks'];?> veckor. Observera att du inte kan vinna förrän du betalat. Betalningen måste vara gjord senast klockan 18 på lördag.<br>Lycka till och tack för ditt bidrag till Älgå Sportklubb.</p>
                                 </section>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ function save_joker_number($number) {
 
                             <div class="row">
                                 <div class="col-xs-12 text-center">
-                                    <h1>Första dragningen: 5 november<br><small>Ta chansen och var med från början</small></h1>
+                                    <h1><small>Vecka 51</small><br>Veckans jokernummer: 50</h1>
                                 </div>
                             </div>
 
@@ -263,7 +263,7 @@ function save_joker_number($number) {
                                                 </div>
                                             </div>
                                             
-                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade. Betalningen måste vara gjord senast klockan 18 lördagen den 5 november.</strong></p>
+                                            <p>Dina jokernummer reserveras tills din betalning är bekräftad. <strong>Observera att du kan inte kan vinna förrän dina nummer är betalade. Betalningen måste vara gjord senast klockan 18 på lördag.</strong></p>
                                             
                                             <div class="input-group">
                                                 <button type="submit" class="btn btn-primary">Reservera</button>
