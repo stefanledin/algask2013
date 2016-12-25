@@ -216,6 +216,9 @@ require 'includes/shortcodes/skytteliga.php';
 	add_action('init', 'register_post_types');
 
 	
+	if ( function_exists('acf_add_options_page') ) {
+		acf_add_options_page('Sajtinställningar');
+	}
 
 	/*
 	Filter - the_category

@@ -102,7 +102,7 @@ function save_joker_number($number) {
 
                             <div class="row">
                                 <div class="col-xs-12 text-center">
-                                    <h1><small>Vecka 51</small><br>Veckans jokernummer: 50</h1>
+                                    <h1><small>Vecka <?php the_field('algajokern_week', 'option');?></small><br>Veckans jokernummer: <?php the_field('algajokern_number', 'option');?></h1>
                                 </div>
                             </div>
 
